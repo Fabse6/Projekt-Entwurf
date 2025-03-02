@@ -10,9 +10,12 @@
 ### Values ###
 
 ### Functions ###
-def check_answer (response):                                    #überprüft, ob die Eingabe der jeweiligen Aufgabe richtig ist.
-    user_response = input("Deine Lösung: ")                     #Wenn Eingabe nicht richtig ist, wird die Anzahl der Versuche angezeigt
-    response_tries = 4                                          #und solange ein neuer Versuch angeboten, bis die Versuche aufgebraucht sind
+def check_answer (response):       
+    #checks, if user`s awnser is correct or not. If not it shows
+    #remaining tries and if no tries left the user has to restart
+    #the programm                             
+    user_response = input("Deine Lösung: ")                     
+    response_tries = 4                                          
     for i in range(4, 0, -1):
         if user_response != response and response_tries > 0:
             print("Falsche Lösung!")
