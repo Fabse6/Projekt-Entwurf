@@ -10,6 +10,7 @@
 ### Values ###
 
 ### Functions ###
+
 def check_answer (response):       
     #checks, if user`s awnser is correct or not. If not it shows
     #remaining tries and if no tries left the user has to restart
@@ -28,12 +29,17 @@ def check_answer (response):
         if response_tries == 0 and user_response != response:
             print("Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
             exit()
+            
+
 
 
 
 ### Input ###
 
+user_skill_level = input("Was ist dein Skillevel in Python? (Anfänger, Fortgeschritten, Profi): ")
+
 ### Calculations ###
+
 
 ### Output ###
 
