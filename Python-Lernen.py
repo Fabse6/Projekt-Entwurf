@@ -6,11 +6,11 @@
 
 'Programm to learn basic skills in Python'
 
-
+# Introduction for the user
 print("""
-************************************
+********************************************
         Starte deine Python-Reise
-************************************
+********************************************
 
 Mit PyLearn kannst du Python Schritt für Schritt erlernen – von den Grundlagen bis zu fortgeschrittenen Themen!
 
@@ -22,18 +22,28 @@ Wähle deine Lernstufe:
 ************************************
 """)
 
-learning_level = input("Gib die Nummer deiner Lernstufe ein (1-3): ")
+# Input of User-Informations
 
-if learning_level == "1":
-    print("\nDu hast Anfänger gewählt. Hier lernst du die Basics von Python!")
-elif learning_level == "2":
-    print("\nDu hast die Mittelstufe gewählt. Du vertiefst dein Wissen mit komplexeren Konzepten!")
-elif learning_level == "3":
-    print("\nDu hast Fortgeschritten gewählt. Jetzt wird es anspruchsvoll mit OOP und Algorithmen!")
-else:
-    print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
+while True: # repeats the query for the user input until a correct input is made
 
-      
+    learning_level = input("Gib die Nummer deiner Lernstufe ein (1-3): ") # query of the user for the respective learning level
+
+    
+    if learning_level == "1":
+        print("\nDu hast Anfänger gewählt. Hier lernst du die Basics von Python!")
+        break # interrupts the while loop when the numbers 1-3 are entered
+    elif learning_level == "2":
+        print("\nDu hast die Mittelstufe gewählt. Du vertiefst dein Wissen mit komplexeren Konzepten!")
+        break
+    elif learning_level == "3":
+        print("\nDu hast Fortgeschritten gewählt. Jetzt wird es anspruchsvoll mit OOP und Algorithmen!")
+        break
+    
+    # if no correct input was made, output this text
+    else:
+        print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
+
+
 
 
 
