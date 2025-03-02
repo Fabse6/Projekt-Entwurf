@@ -7,6 +7,36 @@
 'Programm to learn basic skills in Python'
 
 
+print("""
+************************************
+        Starte deine Python-Reise
+************************************
+
+Mit PyLearn kannst du Python Schritt für Schritt erlernen – von den Grundlagen bis zu fortgeschrittenen Themen!
+
+Wähle deine Lernstufe:
+[1] Anfänger – Grundlagen wie Variablen, Schleifen und Funktionen
+[2] Mittelstufe – Listen, Dictionaries, Fehlerbehandlung
+[3] Fortgeschritten – OOP, Datenstrukturen, Algorithmen
+
+************************************
+""")
+
+learning_level = input("Gib die Nummer deiner Lernstufe ein (1-3): ")
+
+if learning_level == "1":
+    print("\nDu hast Anfänger gewählt. Hier lernst du die Basics von Python!")
+elif learning_level == "2":
+    print("\nDu hast die Mittelstufe gewählt. Du vertiefst dein Wissen mit komplexeren Konzepten!")
+elif learning_level == "3":
+    print("\nDu hast Fortgeschritten gewählt. Jetzt wird es anspruchsvoll mit OOP und Algorithmen!")
+else:
+    print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
+
+      
+
+
+
 ### Values ###
 
 ### Functions ###
