@@ -59,6 +59,8 @@ def check_answer(response):
         if response_tries == 0 and user_response != response:
             print("Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
             exit()
+            
+
 
 
 
