@@ -44,12 +44,13 @@ while True: # repeats the query for the user input until a correct input is made
         print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
 
 
-def check_answer(response):  
+def check_answer(response):
+    #checks if user's input is correct or not, if no tries left user has to start again  
     user_response = input("Deine Lösung: ")
     response_tries = 5  
-
+    
     for i in range(5, 0, -1):
-        if user_response != response and response_tries > 0:
+        if user_response != response and response_tries > 1:
             print("Falsche Lösung!")
             print(f"Du hast noch {i - 1} Versuche!")
             user_response = input("Deine Lösung: ")
@@ -68,7 +69,7 @@ def check_answer(response):
 
 
 def check_code(expected_code):  
-    """Überprüft, ob der eingegebene Code mit der erwarteten Lösung übereinstimmt."""
+    #checks if user's input is correct. If no tries left user has to start again
     print("\nSchreibe den folgenden Code:")
     print(f"   {expected_code}")
     user_code = input("Deine Eingabe: ")
