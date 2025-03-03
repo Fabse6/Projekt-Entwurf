@@ -48,34 +48,45 @@ while True: # repeats the query for the user input until a correct input is made
 # review of multiple choice answers
 def check_answer(response):  
     user_response = input("Deine Lösung: ")
-    response_tries = 4  
+    response_tries = 5  
 
-    for i in range(4, 0, -1):
+    for i in range(5, 0, -1):
         if user_response != response and response_tries > 0:
             print("Falsche Lösung!")
-            print(f"Du hast noch {i} Versuche!")
+            print(f"Du hast noch {i - 1} Versuche!")
             user_response = input("Deine Lösung: ")
-        elif response_tries > 0:
+            response_tries -= 1
+        elif response_tries >= 1 and user_response == response:
                 print("Super! Das ist richtig!")
-                response_tries = 0
-        if response_tries == 0 and user_response != response:
+                response_tries -= 5
+        elif response_tries == 1 and user_response != response:
+            print("Die richtige Antwort wäre: " + str(response))
             print("Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
             exit()
+        
             
 
-# checking the input (code creation)
+
+
+
 def check_code(expected_code):  
     # checks whether the code entered matches the expected solution.
     print("\nSchreibe den folgenden Code:")
     print(f"   {expected_code}")
     user_code = input("Deine Eingabe: ")
-    # if the user's input is correct then output this response
-    if user_code.strip() == expected_code.strip():
-        print("Super! Dein Code ist korrekt.")
-    # for an incorrect entry, this answer is output
-    else:
-        print("Falsch! Versuch es nochmal.")
-        check_code(expected_code)  # repeats the function if the code is wrong
+    response_tries = 5
+    for i in range(5, 0, -1):
+        if user_code.strip() == expected_code.strip() and response_tries >= 1:
+            print("Super! Dein Code ist korrekt.")
+        elif user_code.strip() != expected_code.strip() and response_tries > 1:
+            print("Falsch! Versuch es nochmal.")
+            print(f"du hast noch {i - 1} Versuche!")
+            response_tries -= 1 
+            user_code = input("Deine Eingabe: ")
+        elif response_tries == 1 and user_code.strip() != expected_code.strip():
+            print("Der richtige Code wäre: " + expected_code)
+            print(f"Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
+            exit()
 
 
 # definition for the learning level “beginner”
