@@ -1,5 +1,5 @@
 #Authors: Moritz Mezler, Fabian Wiedemann
-#Matrikelnummer von Moritz Mezler:
+#Matrikelnummer von Moritz Mezler: 
 #Matrikelnummer von Fabian Wiedemann: 6415375
 #date: 2025-03-01
 #brief:
@@ -43,7 +43,9 @@ while True: # repeats the query for the user input until a correct input is made
     else:
         print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
 
+# Functions 
 
+# review of multiple choice answers
 def check_answer(response):  
     user_response = input("Deine Lösung: ")
     response_tries = 4  
@@ -61,24 +63,24 @@ def check_answer(response):
             exit()
             
 
-
-
-
+# checking the input (code creation)
 def check_code(expected_code):  
-    """Überprüft, ob der eingegebene Code mit der erwarteten Lösung übereinstimmt."""
+    # checks whether the code entered matches the expected solution.
     print("\nSchreibe den folgenden Code:")
     print(f"   {expected_code}")
     user_code = input("Deine Eingabe: ")
-
+    # if the user's input is correct then output this response
     if user_code.strip() == expected_code.strip():
         print("Super! Dein Code ist korrekt.")
+    # for an incorrect entry, this answer is output
     else:
         print("Falsch! Versuch es nochmal.")
-        check_code(expected_code)  # Wiederholt die Funktion, falls der Code falsch ist
+        check_code(expected_code)  # repeats the function if the code is wrong
 
 
-
-def beginner_unit():
+# definition for the learning level “beginner”
+def beginner_unit(): 
+    # description
     print("""
     Lerneinheit für Anfänger:
     - Was sind Variablen und wie verwendest du sie?
@@ -87,35 +89,41 @@ def beginner_unit():
 
     Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
     """)
-    input()
-
+    input() # enter any value to start the learning unit/question catalog
+    
+    # first element: answering a question
     print("\nFrage 1: Was ist eine Variable in Python?")
     print("1) Eine Funktion")
     print("2) Ein Datentyp")
     print("3) Ein Speicherort für Daten")
     print("4) Ein Schleifen-Konstrukt")
-    check_answer("3")  # Die richtige Antwort ist "3"
-
+    check_answer("3")  # the correct answer is "3"
+    
+    # second element: input / creation of a program code
     print("\nSchreibe jetzt selbst einen Code, um 'Hello World' auszugeben.")
     check_code("number_1 = 0")
-
+    
+    # third element: answering a question 
     print("\nFrage 2: Wie erstelle ich eine Schleife in Python?")
     print("1) Mit einer Funktion")
     print("2) Mit einer Bedingung")
     print("3) Mit 'for' oder 'while'")
     print("4) Mit 'if' und 'else'")
-    check_answer("3")  # Die richtige Antwort ist "3"
+    check_answer("3")  # the correct answer is "3"
 
+    # fourth element: answering a question
     print("\nFrage 3: Wie definierst du eine Funktion in Python?")
     print("1) Mit 'function'")
     print("2) Mit 'def'")
     print("3) Mit 'lambda'")
     print("4) Mit 'func'")
-    check_answer("2")  # Die richtige Antwort ist "2"
+    check_answer("2")  # the correct answer is "2"
 
     print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
 
+# Definition for the intermediate learning level
 def intermediate_unit():
+    # Description
     print("""
     Lerneinheit für Mittelstufe:
     - Listen und Dictionaries verstehen und verwenden
@@ -124,9 +132,11 @@ def intermediate_unit():
 
     Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
     """)
-    input()
+    input() # Enter any value to start the learning unit/question catalog
 
+# definition for the advanced learning level
 def advenced_unit():
+    # description
     print("""
     Lerneinheit für Fortgeschrittene:
     - Objektorientierte Programmierung (OOP) in Python
@@ -135,16 +145,20 @@ def advenced_unit():
 
     Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
     """)
-    input()
-
+    input() # enter any value to start the learning unit/question catalog
 
 
 
 # Output 
+# prints the values ​​of the beginner_unit definition when the number "1" is selected
 if learning_level == "1":
     beginner_unit()
+
+# prints the values ​​of the intermediate_unit definition when the number "2" is selected
 elif learning_level == "2":
     intermediate_unit()
+
+# prints the values ​​of the advanced_unit definition when the number "3" is selected
 elif learning_level == "3":
     advanced_unit()
 
