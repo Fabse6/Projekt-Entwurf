@@ -44,36 +44,9 @@ while True: # repeats the query for the user input until a correct input is made
         print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
 
 
-
-"""
-### Values ###
-
-### Functions ###
-def check_answer (response):                                    #überprüft, ob die Eingabe der jeweiligen Aufgabe richtig ist.
-    user_response = input("Deine Lösung: ")                     #Wenn Eingabe nicht richtig ist, wird die Anzahl der Versuche angezeigt
-    response_tries = 4                                          #und solange ein neuer Versuch angeboten, bis die Versuche aufgebraucht sind
-    for i in range(4, 0, -1):
-        if user_response != response and response_tries > 0:
-            print("Falsche Lösung!")
-            print(f"du hast noch {i} Versuche!")
-            user_response = input("Deine Lösung: ")
-            response_tries -= 1
-        elif response_tries > 0:
-            print("Super! Das ist richtig!")
-            response_tries = 0
-        if response_tries == 0 and user_response != response:
-            print("Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
-            exit()
-### Input ###
-
-### Calculations ###
-
-### Output ###
-"""
-
-def check_answer(response):  # Überprüft, ob die Eingabe richtig ist
+def check_answer(response):  
     user_response = input("Deine Lösung: ")
-    response_tries = 4  # Maximale Anzahl der Versuche
+    response_tries = 4  
 
     for i in range(4, 0, -1):
         if user_response != response and response_tries > 0:
@@ -86,6 +59,21 @@ def check_answer(response):  # Überprüft, ob die Eingabe richtig ist
         if response_tries == 0 and user_response != response:
             print("Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
             exit()
+
+
+
+def check_code(expected_code):  
+    """Überprüft, ob der eingegebene Code mit der erwarteten Lösung übereinstimmt."""
+    print("\nSchreibe den folgenden Code:")
+    print(f"   {expected_code}")
+    user_code = input("Deine Eingabe: ")
+
+    if user_code.strip() == expected_code.strip():
+        print("Super! Dein Code ist korrekt.")
+    else:
+        print("Falsch! Versuch es nochmal.")
+        check_code(expected_code)  # Wiederholt die Funktion, falls der Code falsch ist
+
 
 
 def beginner_unit():
@@ -105,6 +93,9 @@ def beginner_unit():
     print("3) Ein Speicherort für Daten")
     print("4) Ein Schleifen-Konstrukt")
     check_answer("3")  # Die richtige Antwort ist "3"
+
+    print("\nSchreibe jetzt selbst einen Code, um 'Hello World' auszugeben.")
+    check_code("number_1 = 0")
 
     print("\nFrage 2: Wie erstelle ich eine Schleife in Python?")
     print("1) Mit einer Funktion")
@@ -146,11 +137,17 @@ def advenced_unit():
 
 
 
+
+# Output 
 if learning_level == "1":
     beginner_unit()
 elif learning_level == "2":
     intermediate_unit()
 elif learning_level == "3":
     advanced_unit()
+
+
+
+
 
 
