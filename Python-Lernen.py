@@ -36,8 +36,6 @@ def check_answer (response):
 
 ### Input ###
 
-user_skill_level = input("Was ist dein Skillevel in Python? (Anfänger, Fortgeschritten, Profi): ")
-
 ### Calculations ###
 
 
