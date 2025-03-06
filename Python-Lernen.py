@@ -93,7 +93,7 @@ def check_code(expected_code):
             response_tries -= 1 
             user_code = input("Deine Eingabe: ")
         elif response_tries == 1 and user_code.strip() != expected_code.strip():
-            print("Der richtige Code wäre: " + expected_code)
+            print("\n\nDer richtige Code wäre: " + expected_code)
             print("\nDu hast deine Versuche aufgebraucht!")
             print("Drücke 'Enter', um das Programm neuzustarten!")
             restart_program()
