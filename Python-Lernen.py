@@ -6,6 +6,9 @@
 
 'Programm to learn basic skills in Python'
 
+
+import sys #needed to have a command to restart the program
+
 # Introduction for the user
 print("""
 ********************************************
@@ -45,11 +48,17 @@ while True: # repeats the query for the user input until a correct input is made
 
         ### Input ### 
 
+
+def restart_program():
+    print("Starte das Programm erneut...!")
+    exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
+    
+    
 def check_answer(response):
     #checks if user's input is correct or not, if no tries left user has to start again  
     user_response = input("Deine Lösung: ")
     response_tries = 5  
-    
+
     for i in range(5, 0, -1):
         if user_response != response and response_tries > 1:
             print("Falsche Lösung!")
@@ -60,9 +69,11 @@ def check_answer(response):
                 print("Super! Das ist richtig!")
                 response_tries -= 5
         elif response_tries == 1 and user_response != response:
-            print("Die richtige Antwort wäre: " + str(response))
-            print("Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
-            exit()
+            print("\n\nDie richtige Antwort wäre: " + str(response))
+            print("\nDu hast deine Versuche aufgebraucht!")
+            print("Drücke 'Enter', um das Programm neuzustarten!")
+            input()
+            restart_program()
         
             
 
@@ -83,8 +94,10 @@ def check_code(expected_code):
             user_code = input("Deine Eingabe: ")
         elif response_tries == 1 and user_code.strip() != expected_code.strip():
             print("Der richtige Code wäre: " + expected_code)
-            print(f"Du hast deine Versuche aufgebraucht! Starte das Programm erneut!")
-            exit()
+            print("\nDu hast deine Versuche aufgebraucht!")
+            print("Drücke 'Enter', um das Programm neuzustarten!")
+            restart_program()
+    
 
 
 # definition for the learning level “beginner”
