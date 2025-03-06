@@ -50,7 +50,7 @@ while True: # repeats the query for the user input until a correct input is made
 
 
 def restart_program():
-    print("Starte das Programm erneut...!")
+    print("\n\n\n\n\nStarte das Programm erneut...!")
     exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
     
     
@@ -87,6 +87,7 @@ def check_code(expected_code):
     for i in range(5, 0, -1):
         if user_code.strip() == expected_code.strip() and response_tries >= 1:
             print("Super! Dein Code ist korrekt.")
+            response_tries -= 5
         elif user_code.strip() != expected_code.strip() and response_tries > 1:
             print("Falsch! Versuch es nochmal.")
             print(f"du hast noch {i - 1} Versuche!")
