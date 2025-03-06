@@ -123,7 +123,7 @@ def beginner_unit():
     
     # second element: input / creation of a program code
     print("\nSchreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
-    check_code("print(Hello World!)")
+    check_code('print("Hello World!")')
     
     # third element: answering a question 
     print("\nFrage 2: Wie erstelle ich eine Schleife in Python?")
