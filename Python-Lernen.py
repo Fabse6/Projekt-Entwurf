@@ -43,7 +43,7 @@ while True: # repeats the query for the user input until a correct input is made
     else:
         print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
 
-# Functions 
+        ### Input ### 
 
 def check_answer(response):
     #checks if user's input is correct or not, if no tries left user has to start again  
@@ -65,8 +65,6 @@ def check_answer(response):
             exit()
         
             
-
-
 
 
 def check_code(expected_code):  
@@ -111,8 +109,8 @@ def beginner_unit():
     check_answer("3")  # the correct answer is "3"
     
     # second element: input / creation of a program code
-    print("\nSchreibe jetzt selbst einen Code, um 'Hello World' auszugeben.")
-    check_code("number_1 = 0")
+    print("\nSchreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
+    check_code("print(Hello World!)")
     
     # third element: answering a question 
     print("\nFrage 2: Wie erstelle ich eine Schleife in Python?")
@@ -160,7 +158,8 @@ def advenced_unit():
 
 
 
-# Output 
+        ### Output ### 
+
 # prints the values ​​of the beginner_unit definition when the number "1" is selected
 if learning_level == "1":
     beginner_unit()
