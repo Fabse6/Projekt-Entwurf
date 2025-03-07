@@ -158,7 +158,7 @@ def intermediate_unit():
     input() # Enter any value to start the learning unit/question catalog
 
 # definition for the advanced learning level
-def advenced_unit():
+def advanced_unit():
     # description
     print("""
     Lerneinheit für Fortgeschrittene:
