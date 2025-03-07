@@ -58,13 +58,13 @@ while True: # repeats the query for the user input until a correct input is made
     #exec(open(sys.argv[0].read()))
     #exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
     
-
+counter = 0
 
 def check_answer(response):
     #checks if user's input is correct or not, if no tries left user has to start again  
     user_response = input("Deine Lösung: ")
     response_tries = 5  
-    global score # changes the value of the global variable
+    global score, counter # changes the value of the global variable
 
     for i in range(5, 0, -1):
         if user_response != response and response_tries > 1:
@@ -74,7 +74,7 @@ def check_answer(response):
             response_tries -= 1
         elif response_tries >= 1 and user_response == response:
             print("Super! Das ist richtig!")
-            
+            counter += 1
             # Calculation of score points depending on the number of attempts required
             if response_tries == 5:
              score += 4
@@ -86,11 +86,12 @@ def check_answer(response):
         elif response_tries == 1 and user_response != response:
             print("\n\nDie richtige Antwort wäre: " + str(response))
             print("\nDu hast deine Versuche aufgebraucht!")
+            counter += 1
             #print("Drücke 'Enter', um das Programm neuzustarten!")
             #input()
             #restart_program()
-
-    
+     
+    check_next_level()
     print(f"Aktueller Punktestand. {score}")      
 
 def check_code(expected_code):  
@@ -99,13 +100,13 @@ def check_code(expected_code):
     print(f"   {expected_code}")
     user_code = input("Deine Eingabe: ")
     response_tries = 5
-    global score # changes the value of the global variable
+    global score, counter # changes the value of the global variable
 
     for i in range(5, 0, -1):
         if user_code.strip() == expected_code.strip() and response_tries >= 1:
             print("Super! Dein Code ist korrekt.")
             response_tries -= 5
-            
+            counter += 1
             # Calculation of score points depending on the number of attempts required
             if response_tries == 5:
              score += 4
@@ -125,10 +126,22 @@ def check_code(expected_code):
             print("Drücke 'Enter', um das Programm neuzustarten!")
             #restart_program()
     
+    check_next_level()
     print(f"Aktueller Punktestand: {score}")
     
 
-    
+def check_next_level():
+    global counter
+    if counter >= 4:
+        print(f"Du hast {score} von 4 Punkten erreicht!")
+        print("möchstest du zur nächten Lerneinheit wechsekn oder zurück zum Start? (nächste/start)")
+        choice = input().strip().lower()
+        if choice == "nächste":
+            second_learning_level()
+        elif choice == "start":
+            beginner_unit()
+        else:
+            print("Programm beendet")   
 
 # definition for the learning level “beginner”
 def beginner_unit(): 
@@ -142,8 +155,15 @@ def beginner_unit():
     Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
     """)
     input() # enter any value to start the learning unit/question catalog
-    global score # changes the value of the global variable
+    start_learning()
+
+def start_learning():
+    global score, counter # changes the value of the global variable
     score = 0
+    counter = 0
+    first_learning_level()
+
+def first_learning_level():
     # first element: answering a question
     print("\nFrage 1: Was ist eine Variable in Python?")
     print("1) Eine Funktion")
@@ -153,11 +173,11 @@ def beginner_unit():
     check_answer("3")  # the correct answer is "3"
     
     # second element: input / creation of a program code
-    print("\nSchreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
-    check_code('print("Hello World!")')
+    print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
+    check_code('print(1)')
     
     # third element: answering a question 
-    print("\nFrage 2: Wie erstelle ich eine Schleife in Python?")
+    print("\nFrage 3: Wie erstelle ich eine Schleife in Python?")
     print("1) Mit einer Funktion")
     print("2) Mit einer Bedingung")
     print("3) Mit 'for' oder 'while'")
@@ -165,7 +185,7 @@ def beginner_unit():
     check_answer("3")  # the correct answer is "3"
 
     # fourth element: answering a question
-    print("\nFrage 3: Wie definierst du eine Funktion in Python?")
+    print("\nFrage 4: Wie definierst du eine Funktion in Python?")
     print("1) Mit 'function'")
     print("2) Mit 'def'")
     print("3) Mit 'lambda'")
@@ -174,6 +194,45 @@ def beginner_unit():
 
     print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
     print(f"Du hast {score} von 4 Punkten erreicht")
+
+
+def second_learning_level():
+    start_learning()
+    print("\nFrage 1: Was ist eine Liste in Python?")
+    print("1) Eine Variable")
+    print("2) Eine Sammlung von Werten")
+    print("3) Ein Datentyp")
+    print("4) Eine Schleife")
+    check_answer("2")
+
+    print("\nFrage 2: Wie iteriert man durch eine Liste in Python?")
+    print("1) Mit 'for' oder 'while'")
+    print("2) Mit 'if'")
+    print("3) Mit einer Funktion")
+    print("4) Mit einer Klasse")
+    check_answer("1")
+
+    print("\nFrage 3: Wie erstellt man eine Klasse in Python?")
+    print("1) Mit 'def'")
+    print("2) Mit 'class'")
+    print("3) Mit 'function'")
+    print("4) Mit 'type'")
+    check_answer("2")
+
+    print("\nFrage 4: Was bedeutet 'self' in Klassenmethoden?")
+    print("1) Eine Variable")
+    print("2) Ein Parameter")
+    print("3) Eine Referenz auf die Instanz")
+    print("4) Eine Schleife")
+    check_answer("3")
+
+    print(f"Du hast {score} von 4 Punkten erreicht!")
+    print("Lerneinheit abgeschlossen!")
+
+
+
+
+
 # Definition for the intermediate learning level
 def intermediate_unit():
     # Description
