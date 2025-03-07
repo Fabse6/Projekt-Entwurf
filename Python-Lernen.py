@@ -7,8 +7,9 @@
 'Programm to learn basic skills in Python'
 
 
-import sys #needed to have a command to restart the program
-
+#import sys #needed to have a command to restart the program
+import sys
+import os
 # Introduction for the user
 print("""
 ********************************************
@@ -51,7 +52,10 @@ while True: # repeats the query for the user input until a correct input is made
 
 def restart_program():
     print("\n\n\n\n\nStarte das Programm erneut...!")
-    exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
+    os.execv(sys.executable, ['python'] + sys.argv)
+    #os.execv(sys.executable, [sys.executable] + sys.argv)
+    #exec(open(sys.argv[0].read()))
+    #exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
     
     
 def check_answer(response):
@@ -179,12 +183,12 @@ if learning_level == "1":
     beginner_unit()
 
 # prints the values ​​of the intermediate_unit definition when the number "2" is selected
-elif learning_level == "2":
-    intermediate_unit()
+# elif learning_level == "2":
+    # intermediate_unit()
 
 # prints the values ​​of the advanced_unit definition when the number "3" is selected
-elif learning_level == "3":
-    advanced_unit()
+# elif learning_level == "3":
+    # advanced_unit()
 
 
 
