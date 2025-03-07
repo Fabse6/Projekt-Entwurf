@@ -8,8 +8,8 @@
 
 
 #import sys #needed to have a command to restart the program
-import sys
-import os
+#import sys
+#import os
 # Introduction for the user
 print("""
 ********************************************
@@ -47,21 +47,24 @@ while True: # repeats the query for the user input until a correct input is made
     else:
         print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
 
+
         ### Input ### 
 
 
-def restart_program():
-    print("\n\n\n\n\nStarte das Programm erneut...!")
-    os.execv(sys.executable, ['python'] + sys.argv)
+#def restart_program():
+    #print("\n\n\n\n\nStarte das Programm erneut...!")
+    #os.execv(sys.executable, ['python'] + sys.argv)
     #os.execv(sys.executable, [sys.executable] + sys.argv)
     #exec(open(sys.argv[0].read()))
     #exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
     
-    
+score = 0
+
 def check_answer(response):
     #checks if user's input is correct or not, if no tries left user has to start again  
     user_response = input("Deine Lösung: ")
     response_tries = 5  
+    global score
 
     for i in range(5, 0, -1):
         if user_response != response and response_tries > 1:
@@ -70,17 +73,18 @@ def check_answer(response):
             user_response = input("\nDeine Lösung: ")
             response_tries -= 1
         elif response_tries >= 1 and user_response == response:
-                print("Super! Das ist richtig!")
-                response_tries -= 5
+            print("Super! Das ist richtig!")
+            response_tries -= 5
+            score += 1
         elif response_tries == 1 and user_response != response:
             print("\n\nDie richtige Antwort wäre: " + str(response))
             print("\nDu hast deine Versuche aufgebraucht!")
-            print("Drücke 'Enter', um das Programm neuzustarten!")
-            input()
-            restart_program()
-        
-            
+            #print("Drücke 'Enter', um das Programm neuzustarten!")
+            #input()
+            #restart_program()
 
+    else:
+        print(f"Aktueller Punktestand. {score}")      
 
 def check_code(expected_code):  
     #checks if user's input is correct. If no tries left user has to start again
@@ -88,10 +92,13 @@ def check_code(expected_code):
     print(f"   {expected_code}")
     user_code = input("Deine Eingabe: ")
     response_tries = 5
+    global score
+
     for i in range(5, 0, -1):
         if user_code.strip() == expected_code.strip() and response_tries >= 1:
             print("Super! Dein Code ist korrekt.")
             response_tries -= 5
+            score +=1
         elif user_code.strip() != expected_code.strip() and response_tries > 1:
             print("\nFalsch! Versuch es nochmal.")
             print(f"Du hast noch {i - 1} Versuche!")
@@ -101,9 +108,13 @@ def check_code(expected_code):
             print("\n\nDer richtige Code wäre: " + expected_code)
             print("\nDu hast deine Versuche aufgebraucht!")
             print("Drücke 'Enter', um das Programm neuzustarten!")
-            restart_program()
+            #restart_program()
+    
+    else:
+        print(f"Aktueller Punktestand: {score}")
     
 
+    
 
 # definition for the learning level “beginner”
 def beginner_unit(): 
@@ -117,7 +128,8 @@ def beginner_unit():
     Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
     """)
     input() # enter any value to start the learning unit/question catalog
-    
+    global score
+    score = 0
     # first element: answering a question
     print("\nFrage 1: Was ist eine Variable in Python?")
     print("1) Eine Funktion")
@@ -147,7 +159,7 @@ def beginner_unit():
     check_answer("2")  # the correct answer is "2"
 
     print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
-
+    print(f"Du hast {score} von 4 Punkten erreicht")
 # Definition for the intermediate learning level
 def intermediate_unit():
     # Description
