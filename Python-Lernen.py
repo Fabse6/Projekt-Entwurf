@@ -67,7 +67,7 @@ def check_answer(response):
         if user_response != response and response_tries > 1:
             print("\nFalsche Lösung!")
             print(f"Du hast noch {i - 1} Versuche!")
-            user_response = input("\n1Deine Lösung: ")
+            user_response = input("\nDeine Lösung: ")
             response_tries -= 1
         elif response_tries >= 1 and user_response == response:
                 print("Super! Das ist richtig!")
@@ -94,7 +94,7 @@ def check_code(expected_code):
             response_tries -= 5
         elif user_code.strip() != expected_code.strip() and response_tries > 1:
             print("\nFalsch! Versuch es nochmal.")
-            print(f"D1u hast noch {i - 1} Versuche!")
+            print(f"Du hast noch {i - 1} Versuche!")
             response_tries -= 1 
             user_code = input("Deine Eingabe: ")
         elif response_tries == 1 and user_code.strip() != expected_code.strip():
