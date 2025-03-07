@@ -124,6 +124,7 @@ def check_code(expected_code):
             print("\n\nDer richtige Code wäre: " + expected_code)
             print("\nDu hast deine Versuche aufgebraucht!")
             print("Drücke 'Enter', um das Programm neuzustarten!")
+            counter += 1
             #restart_program()
     
     check_next_level()
