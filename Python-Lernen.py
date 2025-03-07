@@ -58,13 +58,13 @@ while True: # repeats the query for the user input until a correct input is made
     #exec(open(sys.argv[0].read()))
     #exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
     
-score = 0
+
 
 def check_answer(response):
     #checks if user's input is correct or not, if no tries left user has to start again  
     user_response = input("Deine Lösung: ")
     response_tries = 5  
-    global score
+    global score # changes the value of the global variable
 
     for i in range(5, 0, -1):
         if user_response != response and response_tries > 1:
@@ -74,8 +74,15 @@ def check_answer(response):
             response_tries -= 1
         elif response_tries >= 1 and user_response == response:
             print("Super! Das ist richtig!")
-            response_tries -= 5
-            score += 1
+            
+            # Calculation of score points depending on the number of attempts required
+            if response_tries == 5:
+             score += 4
+            if response_tries >= 2 and response_tries <= 4:
+                score += 2
+            if response_tries < 2:
+                score += 1
+            break #ends the loop so that the current score is still displayed (unlike return)
         elif response_tries == 1 and user_response != response:
             print("\n\nDie richtige Antwort wäre: " + str(response))
             print("\nDu hast deine Versuche aufgebraucht!")
@@ -83,8 +90,8 @@ def check_answer(response):
             #input()
             #restart_program()
 
-    else:
-        print(f"Aktueller Punktestand. {score}")      
+    
+    print(f"Aktueller Punktestand. {score}")      
 
 def check_code(expected_code):  
     #checks if user's input is correct. If no tries left user has to start again
@@ -92,13 +99,21 @@ def check_code(expected_code):
     print(f"   {expected_code}")
     user_code = input("Deine Eingabe: ")
     response_tries = 5
-    global score
+    global score # changes the value of the global variable
 
     for i in range(5, 0, -1):
         if user_code.strip() == expected_code.strip() and response_tries >= 1:
             print("Super! Dein Code ist korrekt.")
             response_tries -= 5
-            score +=1
+            
+            # Calculation of score points depending on the number of attempts required
+            if response_tries == 5:
+             score += 4
+            if response_tries >= 2 and response_tries <= 4:
+                score += 2
+            if response_tries < 2:
+                score += 1
+            break #ends the loop so that the current score is still displayed (unlike return)
         elif user_code.strip() != expected_code.strip() and response_tries > 1:
             print("\nFalsch! Versuch es nochmal.")
             print(f"Du hast noch {i - 1} Versuche!")
@@ -110,8 +125,7 @@ def check_code(expected_code):
             print("Drücke 'Enter', um das Programm neuzustarten!")
             #restart_program()
     
-    else:
-        print(f"Aktueller Punktestand: {score}")
+    print(f"Aktueller Punktestand: {score}")
     
 
     
@@ -128,7 +142,7 @@ def beginner_unit():
     Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
     """)
     input() # enter any value to start the learning unit/question catalog
-    global score
+    global score # changes the value of the global variable
     score = 0
     # first element: answering a question
     print("\nFrage 1: Was ist eine Variable in Python?")
