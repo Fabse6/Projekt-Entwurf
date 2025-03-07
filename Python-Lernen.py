@@ -92,7 +92,7 @@ def check_answer(response):
             #restart_program()
      
     check_next_level()
-    print(f"Aktueller Punktestand. {score}")      
+        
 
 def check_code(expected_code):  
     #checks if user's input is correct. If no tries left user has to start again
@@ -127,7 +127,6 @@ def check_code(expected_code):
             #restart_program()
     
     check_next_level()
-    print(f"Aktueller Punktestand: {score}")
     
 
 def check_next_level():
@@ -192,12 +191,11 @@ def first_learning_level():
     print("4) Mit 'func'")
     check_answer("2")  # the correct answer is "2"
 
-    print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
-    print(f"Du hast {score} von 4 Punkten erreicht")
-
 
 def second_learning_level():
-    start_learning()
+    global score, counter # changes the value of the global variable
+    score = 0
+    counter = 0
     print("\nFrage 1: Was ist eine Liste in Python?")
     print("1) Eine Variable")
     print("2) Eine Sammlung von Werten")
@@ -225,11 +223,6 @@ def second_learning_level():
     print("3) Eine Referenz auf die Instanz")
     print("4) Eine Schleife")
     check_answer("3")
-
-    print(f"Du hast {score} von 4 Punkten erreicht!")
-    print("Lerneinheit abgeschlossen!")
-
-
 
 
 
@@ -268,12 +261,12 @@ if learning_level == "1":
     beginner_unit()
 
 # prints the values ​​of the intermediate_unit definition when the number "2" is selected
-# elif learning_level == "2":
-    # intermediate_unit()
+elif learning_level == "2":
+    intermediate_unit()
 
 # prints the values ​​of the advanced_unit definition when the number "3" is selected
-# elif learning_level == "3":
-    # advanced_unit()
+elif learning_level == "3":
+    advanced_unit()
 
 
 
