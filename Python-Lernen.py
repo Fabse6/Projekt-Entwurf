@@ -134,7 +134,7 @@ def check_next_level():
     global counter
     if counter >= 4:
         print(f"Du hast {score} von 4 Punkten erreicht!")
-        print("möchstest du zur nächten Lerneinheit wechsekn oder zurück zum Start? (nächste/start)")
+        print("möchstest du zur nächten Lerneinheit wechseln oder zurück zum Start? (nächste/start)")
         choice = input().strip().lower()
         if choice == "nächste":
             second_learning_level()
