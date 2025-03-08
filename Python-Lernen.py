@@ -8,8 +8,11 @@
 
 
 #import sys #needed to have a command to restart the program
+#import sys
+#import os
+
 import sys
-import os
+
 # Introduction for the user
 print("""
 ********************************************
@@ -50,14 +53,20 @@ while True: # repeats the query for the user input until a correct input is made
         ### Input ### 
 
 
-def restart_program():
-    print("\n\n\n\n\nStarte das Programm erneut...!")
-    os.execv(sys.executable, ['python'] + sys.argv)
+#def restart_program():
+    #print("\n\n\n\n\nStarte das Programm erneut...!")
+    #os.execv(sys.executable, ['python'] + sys.argv)
     #os.execv(sys.executable, [sys.executable] + sys.argv)
     #exec(open(sys.argv[0].read()))
     #exec(open(sys.argv[0]).read()) #command from the "sys" library to restart the program
     
-    
+def restart_program():
+    print("\n\n\n\n\nStarte das Programm erneut...!")
+    with open(sys.argv[0], encoding="utf-8") as f:
+        exec(f.read())  # Datei mit UTF-8 Kodierung öffnen
+
+
+
 def check_answer(response):
     #checks if user's input is correct or not, if no tries left user has to start again  
     user_response = input("Deine Lösung: ")
