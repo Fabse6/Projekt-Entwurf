@@ -134,7 +134,8 @@ def main():
             elif choice == "start":
                 beginner_unit()
             else:
-                print("Programm beendet")   
+                print("Programm beendet")
+                exit()  
 
 
 
