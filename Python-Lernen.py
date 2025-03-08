@@ -132,7 +132,7 @@ def main():
             if choice == "nächste":
                 second_learning_level()
             elif choice == "start":
-                beginner_unit()
+                restart_program()
             else:
                 print("Programm beendet")
                 exit()  
