@@ -72,31 +72,18 @@ def main():
                     score += 2
                 if response_tries < 2:
                     score += 1
+                response_tries -= 6
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif response_tries == 1 and user_response != response:
+                response_tries -= 6
                 print("\n\nDie richtige Antwort wäre: " + str(response))
                 print("\nDu hast deine Versuche aufgebraucht!")
+                print("Drücke 'Enter', um das Level nochmal zu versuchen")
+                input()
+                restart_program()
                 counter += 1
 
         check_next_level()
-
-        for i in range(5, 0, -1):
-            if user_response != response and response_tries > 1:
-                print("Falsche Lösung!")
-                print(f"Du hast noch {i - 1} Versuche!")
-                user_response = input("Deine Lösung: ")
-                response_tries -= 1
-            elif response_tries >= 1 and user_response == response:
-                    print("Super! Das ist richtig!")
-                    response_tries -= 5
-            elif response_tries == 1 and user_response != response:
-                print("\n\nDie richtige Antwort wäre: " + str(response))
-                print("\nDu hast deine Versuche aufgebraucht!")
-                print("Drücke 'Enter', um das Programm neuzustarten!")
-                input()
-                restart_program()
-
-
 
 
     def check_code(expected_code):  
@@ -110,7 +97,6 @@ def main():
         for i in range(5, 0, -1):
             if user_code.strip() == expected_code.strip() and response_tries >= 1:
                 print("Super! Dein Code ist korrekt.")
-                response_tries -= 5
                 counter += 1
                 # Calculation of score points depending on the number of attempts required
                 if response_tries == 5:
@@ -119,6 +105,7 @@ def main():
                     score += 2
                 if response_tries < 2:
                     score += 1
+                response_tries -= 6
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif user_code.strip() != expected_code.strip() and response_tries > 1:
                 print("\nFalsch! Versuch es nochmal.")
@@ -130,6 +117,7 @@ def main():
                 print("\nDu hast deine Versuche aufgebraucht!")
                 print("Drücke 'Enter', um das Programm neuzustarten!")
                 counter += 1
+                response_tries -= 6
                 restart_program()
 
         check_next_level()
@@ -138,8 +126,8 @@ def main():
     def check_next_level():
         global counter
         if counter >= 4:
-            print(f"Du hast {score} von 4 Punkten erreicht!")
-            print("möchstest du zur nächten Lerneinheit wechseln oder zurück zum Start? (nächste/start)")
+            print(f"\nDu hast {score} von {counter * 4} Punkten erreicht!")
+            print("möchstest du zur nächten Lerneinheit wechseln, zurück zum Start oder das Programm beenden? (nächste/start/'Enter')")
             choice = input().strip().lower()
             if choice == "nächste":
                 second_learning_level()
@@ -147,28 +135,6 @@ def main():
                 beginner_unit()
             else:
                 print("Programm beendet")   
-
-
-    def check_code(expected_code):  
-        #checks if user's input is correct. If no tries left user has to start again
-        print("\nSchreibe den folgenden Code:")
-        print(f"   {expected_code}")
-        user_code = input("Deine Eingabe: ")
-        response_tries = 5
-        for i in range(5, 0, -1):
-            if user_code.strip() == expected_code.strip() and response_tries >= 1:
-                print("Super! Dein Code ist korrekt.")
-                response_tries -= 5
-            elif user_code.strip() != expected_code.strip() and response_tries > 1:
-                print("Falsch! Versuch es nochmal.")
-                print(f"du hast noch {i - 1} Versuche!")
-                response_tries -= 1 
-                user_code = input("Deine Eingabe: ")
-            elif response_tries == 1 and user_code.strip() != expected_code.strip():
-                print("\n\nDer richtige Code wäre: " + expected_code)
-                print("\nDu hast deine Versuche aufgebraucht!")
-                print("Drücke 'Enter', um das Programm neuzustarten!")
-                restart_program()
 
 
 
@@ -202,30 +168,10 @@ def main():
 
         # second element: input / creation of a program code
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
-        check_code('print(1)')
+        check_code('print("Hello World!")')
 
         # third element: answering a question 
         print("\nFrage 3: Wie erstelle ich eine Schleife in Python?")
-        print("1) Mit einer Funktion")
-        print("2) Mit einer Bedingung")
-        print("3) Mit 'for' oder 'while'")
-        print("4) Mit 'if' und 'else'")
-        check_answer("3")  # the correct answer is "3"
-        print("""Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
-            """)
-        input() # enter any value to start the learning unit/question catalog
-        # first element: answering a question
-        print("\nFrage 1: Was ist eine Variable in Python?")
-        print("1) Eine Funktion")
-        print("2) Ein Datentyp")
-        print("3) Ein Speicherort für Daten")
-        print("4) Ein Schleifen-Konstrukt")
-        check_answer("3")  # the correct answer is "3"
-        # second element: input / creation of a program code
-        print("\nSchreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
-        check_code('print("Hello World!")')
-        # third element: answering a question 
-        print("\nFrage 2: Wie erstelle ich eine Schleife in Python?")
         print("1) Mit einer Funktion")
         print("2) Mit einer Bedingung")
         print("3) Mit 'for' oder 'while'")
@@ -240,12 +186,6 @@ def main():
         print("4) Mit 'func'")
         check_answer("2")  # the correct answer is "2"
             # fourth element: answering a question
-        print("\nFrage 3: Wie definierst du eine Funktion in Python?")
-        print("1) Mit 'function'")
-        print("2) Mit 'def'")
-        print("3) Mit 'lambda'")
-        print("4) Mit 'func'")
-        check_answer("2")  # the correct answer is "2"
 
     def second_learning_level():
         global score, counter # changes the value of the global variable
@@ -313,18 +253,16 @@ def main():
                 ### Output ### 
 
         # prints the values ​​of the beginner_unit definition when the number "1" is selected
-        if learning_level == "1":
-            beginner_unit()
+    if learning_level == "1":
+        beginner_unit()
+    # prints the values ​​of the intermediate_unit definition when the number "2" is selected
+    elif learning_level == "2":
+        intermediate_unit()
+    # prints the values ​​of the advanced_unit definition when the number "3" is selected
+    elif learning_level == "3":
+        advanced_unit()
 
-        # prints the values ​​of the intermediate_unit definition when the number "2" is selected
-        elif learning_level == "2":
-            intermediate_unit()
-
-        # prints the values ​​of the advanced_unit definition when the number "3" is selected
-        elif learning_level == "3":
-            advanced_unit()
-
-    main()
+main()
 
 
 
