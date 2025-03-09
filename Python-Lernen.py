@@ -88,8 +88,6 @@ def main():
 
     def check_code(expected_code):  
         #checks if user's input is correct. If no tries left user has to start again
-        print("\nSchreibe den folgenden Code:")
-        print(f"   {expected_code}")
         user_code = input("Deine Eingabe: ")
         response_tries = 5
         global score, counter # changes the value of the global variable
@@ -168,6 +166,8 @@ def main():
         check_answer("3")  # the correct answer is "3"
 
         # second element: input / creation of a program code
+        print("\nIndem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben.")
+        print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben")
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
         check_code('print("Hello World!")')
 
