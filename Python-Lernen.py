@@ -167,7 +167,7 @@ def main():
 
         # second element: input / creation of a program code
         print("\nIndem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben.")
-        print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben")
+        print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben.")
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
         check_code('print("Hello World!")')
 
