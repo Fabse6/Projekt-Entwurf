@@ -168,9 +168,10 @@ Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
               
 Eine Variable in Python ist ein Speicherplatz für Daten, dem ein Name zugewiesen wird. Sie ermöglicht es, Werte zu speichern und später im Code wiederzuverwenden.
 Eigenschaften von Variablen in Python:
-    - Dynamische Typisierung: Du musst den Datentyp nicht angeben, Python erkennt ihn automatisch.
+    - Dynamische Typisierung: Du musst den Datentyp (String, Float, Integer, ...)nicht angeben, Python erkennt ihn automatisch.
     - Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
-    - Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).""")
+    - Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).
+    - Zu empfehlen: Leerzeichen zwischen Variable, =, und Wert, der in der Variable gespeichert werden soll""")
         print("\nFrage 1: Was ist eine Variable in Python?")
         print("1) Eine Funktion")
         print("2) Ein Datentyp")
@@ -202,6 +203,8 @@ litre_price = 1,80
         check_code("litre = price / litre_price")
 
         # fourth element: answering a question
+        print("Frage 4: Gib nun den Wert der neuen Variable aus!")
+        check_code(print("litre"))
 
             # fourth element: answering a question
 
