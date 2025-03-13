@@ -49,6 +49,10 @@ def main():
     
     def restart_program():
         main()
+        
+    def Enter_to_go_on():
+        print("\nDrücke 'Enter', um weiterzumachen!")
+        input()
 
     def check_answer(response):
         #checks if user's input is correct or not, if no tries left user has to start again  
@@ -158,26 +162,45 @@ def main():
 
     def first_learning_level():
         # first element: answering a question
+        print("""######## Variablen ########
+              
+Eine Variable in Python ist ein Speicherplatz für Daten, dem ein Name zugewiesen wird. Sie ermöglicht es, Werte zu speichern und später im Code wiederzuverwenden.
+Eigenschaften von Variablen in Python:
+- Dynamische Typisierung: Du musst den Datentyp nicht angeben, Python erkennt ihn automatisch.
+- Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
+- Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).""")
         print("\nFrage 1: Was ist eine Variable in Python?")
         print("1) Eine Funktion")
         print("2) Ein Datentyp")
         print("3) Ein Speicherort für Daten")
         print("4) Ein Schleifen-Konstrukt")
         check_answer("3")  # the correct answer is "3"
+        Enter_to_go_on()
 
         # second element: input / creation of a program code
-        print("\nIndem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben.")
+        print("""\n######## print()- Funktion ########
+
+Indem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben. 
+Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird der Wert der Variable in der Konsole ausgegeben.""")
         print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben")
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
         check_code('print("Hello World!")')
+        Enter_to_go_on()
 
         # third element: answering a question 
+        print("""\n######## Schleifen ########
+Eine Schleife in Python ist eine wiederholende Anweisung, die dazu dient, Code mehrfach auszuführen, solange eine bestimmte Bedingung erfüllt ist.
+
+Es gibt zwei Hauptarten von Schleifen:
+- for-Schleife: wird verwendet, um über eine Sequenz (Liste, String, Range etc.) zu iterieren.
+- while-Schleife: wiederholt sich, solange eine Bedingung True ist.""")
         print("\nFrage 3: Wie erstelle ich eine Schleife in Python?")
         print("1) Mit einer Funktion")
         print("2) Mit einer Bedingung")
         print("3) Mit 'for' oder 'while'")
         print("4) Mit 'if' und 'else'")
         check_answer("3")  # the correct answer is "3"
+        Enter_to_go_on()
 
         # fourth element: answering a question
         print("\nFrage 4: Wie definierst du eine Funktion in Python?")
