@@ -204,7 +204,7 @@ litre_price = 1,80
 
         # fourth element: answering a question
         print("Frage 4: Gib nun den Wert der neuen Variable aus!")
-        check_code(print("litre"))
+        check_code('print("litre")')
 
             # fourth element: answering a question
 
