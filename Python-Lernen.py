@@ -49,6 +49,10 @@ def main():
     
     def restart_program():
         main()
+        
+    def Enter_to_go_on():
+        print("\nDrücke 'Enter', um weiterzumachen!")
+        input()
 
     def check_answer(response):
         #checks if user's input is correct or not, if no tries left user has to start again  
@@ -73,6 +77,7 @@ def main():
                 if response_tries < 2:
                     score += 1
                 response_tries -= 6
+                Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif response_tries == 1 and user_response != response:
                 response_tries -= 6
@@ -104,6 +109,7 @@ def main():
                 if response_tries < 2:
                     score += 1
                 response_tries -= 6
+                Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif user_code.strip() != expected_code.strip() and response_tries > 1:
                 print("\nFalsch! Versuch es nochmal.")
@@ -158,6 +164,13 @@ def main():
 
     def first_learning_level():
         # first element: answering a question
+        print("""######## Variablen ########
+              
+Eine Variable in Python ist ein Speicherplatz für Daten, dem ein Name zugewiesen wird. Sie ermöglicht es, Werte zu speichern und später im Code wiederzuverwenden.
+Eigenschaften von Variablen in Python:
+- Dynamische Typisierung: Du musst den Datentyp nicht angeben, Python erkennt ihn automatisch.
+- Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
+- Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).""")
         print("\nFrage 1: Was ist eine Variable in Python?")
         print("1) Eine Funktion")
         print("2) Ein Datentyp")
@@ -166,12 +179,21 @@ def main():
         check_answer("3")  # the correct answer is "3"
 
         # second element: input / creation of a program code
-        print("\nIndem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben.")
-        print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben.")
+        print("""\n######## print()- Funktion ########
+
+Indem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben. 
+Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird der Wert der Variable in der Konsole ausgegeben.""")
+        print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben")
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
         check_code('print("Hello World!")')
 
         # third element: answering a question 
+        print("""\n######## Schleifen ########
+Eine Schleife in Python ist eine wiederholende Anweisung, die dazu dient, Code mehrfach auszuführen, solange eine bestimmte Bedingung erfüllt ist.
+
+Es gibt zwei Hauptarten von Schleifen:
+- for-Schleife: wird verwendet, um über eine Sequenz (Liste, String, Range etc.) zu iterieren.
+- while-Schleife: wiederholt sich, solange eine Bedingung True ist.""")
         print("\nFrage 3: Wie erstelle ich eine Schleife in Python?")
         print("1) Mit einer Funktion")
         print("2) Mit einer Bedingung")
@@ -223,31 +245,29 @@ def main():
 
         print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
 
-        # Definition for the intermediate learning level
-        def intermediate_unit():
-            # Description
-            print("""
-            Lerneinheit für Mittelstufe:
-            - Listen und Dictionaries verstehen und verwenden
-            - Fehlerbehandlung mit try-except
-            - Funktionen mit mehreren Parametern und Rückgabewerten
+    # Definition for the intermediate learning level
+    def intermediate_unit():
+        # Description
+        print("""
+        Lerneinheit für Mittelstufe:
+        - Listen und Dictionaries verstehen und verwenden
+        - Fehlerbehandlung mit try-except
+        - Funktionen mit mehreren Parametern und Rückgabewerten
+        Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
+        """)
+        input() # Enter any value to start the learning unit/question catalog
 
-            Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
-            """)
-            input() # Enter any value to start the learning unit/question catalog
-
-        # definition for the advanced learning level
-        def advanced_unit():
-            # description
-            print("""
-            Lerneinheit für Fortgeschrittene:
-            - Objektorientierte Programmierung (OOP) in Python
-            - Arbeiten mit Datenstrukturen wie Bäumen und Graphen
-            - Implementierung und Analyse von Algorithmen
-
-            Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
-            """)
-            input() # enter any value to start the learning unit/question catalog
+    # definition for the advanced learning level
+    def advanced_unit():
+        # description
+        print("""
+        Lerneinheit für Fortgeschrittene:
+        - Objektorientierte Programmierung (OOP) in Python
+        - Arbeiten mit Datenstrukturen wie Bäumen und Graphen
+        - Implementierung und Analyse von Algorithmen
+        Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
+        """)
+        input() # enter any value to start the learning unit/question catalog
 
 
 
