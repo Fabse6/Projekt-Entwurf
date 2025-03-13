@@ -32,7 +32,7 @@ def main():
             print("\nDu hast Anfänger gewählt. Hier lernst du die Basics von Python!")
             break # interrupts the while loop when the numbers 1-3 are entered
         elif learning_level == "2":
-            print("\nDu hast die Mittelstufe gewählt. Du vertiefst dein Wissen mit komplexeren Konzepten!")
+            print("\nDu hast die Mittelstufe gewählt und vertiefst dein Wissen mit If-Statements und Definitionen!")
             break
         elif learning_level == "3":
             print("\nDu hast Fortgeschritten gewählt. Jetzt wird es anspruchsvoll mit OOP und Algorithmen!")
@@ -270,18 +270,96 @@ Kilometer zu fahren: 200''')
 
 
         print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
-
+ 
+   
     # Definition for the intermediate learning level
     def intermediate_unit():
         # Description
         print("""
         Lerneinheit für Mittelstufe:
-        - Listen und Dictionaries verstehen und verwenden
-        - Fehlerbehandlung mit try-except
-        - Funktionen mit mehreren Parametern und Rückgabewerten
+        - If-Statements – Bedingungen in Schleifen für flexible Programme.  
+        - Definitionen – Eigene Routinen mit Parametern erstellen.
         Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
-        input() # Enter any value to start the learning unit/question catalog
+
+        input() # enter any value to start the learning unit/question catalog
+        start_learning()
+
+    def start_learning():
+        global score, counter # changes the value of the global variable
+        score = 0
+        counter = 0
+        third_learning_level()
+
+    def third_learning_level():
+        # first element: answering a question
+        print("""
+######## If-Statements ########
+              
+Ein if-Statement ermöglicht es, Entscheidungen im Code zu treffen. Es überprüft eine Bedingung und 
+führt den zugehörigen Codeblock nur aus, wenn diese erfüllt ist.
+
+Eigenschaften von If-Statements in Python:
+
+    - Bedingungsauswertung: Der Ausdruck im if-Statement muss True oder False ergeben.
+    - Elif für weitere Bedingungen: Mit elif lassen sich mehrere Bedingungen hintereinander prüfen.
+    - Else als Abschluss: else wird ausgeführt, wenn keine der vorherigen Bedingungen zutrifft.
+    - Einrückung wichtig: Der Codeblock nach if, elif oder else muss korrekt eingerückt sein.""")
+        print("\nFrage 1: Was muss der Ausdruck in einem 'if'-Statement in Python ergeben, damit der zugehörige Code ausgeführt wird?")
+        print("1) Der Ausdruck muss eine Zahl sein")
+        print("2) Der Ausdruck muss True oder False sein")
+        print("3) Der Ausdruck muss ein Textstring sein")
+        print("4) Der Ausdruck muss eine Zahl größer als 10 sein")
+        check_answer("2")  # the correct answer is "2"
+
+
+        #second question
+        print("""
+######## Einführung in die Verwendung von 'if'-Statements ########
+
+Beispiel: Wenn wir überprüfen möchten, ob ein Name ein bestimmter String ist, wie zum Beispiel "Max", könnten wir ein 'If'-Statement verwenden, um dies zu tun.
+In dieser Aufgabe wirst du ein 'If'-Statement verwenden, um zu überprüfen, ob der Name 'Max' ist. 
+
+######## Deine Aufgabe ########""")
+
+        print("\nErstelle den Code, um zu überprüfen, ob ein Name 'Max' ist.")
+        print("Hier ist der vordefinierte Code:")
+        print('name = "Max"')
+        print('***Füge die if-Bedingung ein!***')
+        check_code("""if name == "Max":""")  # Der Benutzer soll **nur** die if-Bedingung eingeben, der Rest ist vorgegeben
+       
+
+        # third question
+        print("""
+######## else-Statement ########
+
+Das 'else'-Statement wird ausgeführt, wenn keine der vorherigen Bedingungen wahr ist. 
+Es stellt eine Art "Fangnetz" dar, um einen Standardcode auszuführen, wenn keine der Bedingungen zutrifft.""")
+
+        print("\nFrage 3: Was passiert, wenn keine der Bedingungen in einem 'if'-Statement zutrifft und kein 'else' angegeben ist?")
+        print("1) Der Code gibt einen Fehler aus")
+        print("2) Es wird automatisch der Code im 'else'-Block ausgeführt")
+        print("3) Der Code nach dem 'if'-Block wird ausgeführt")
+        print("4) Der Code wird sofort beendet")
+        check_answer("3")  # Die richtige Antwort ist "3"
+
+        # fourth question
+        print("""
+######## Einrückung in Python ########
+
+In Python ist die Einrückung entscheidend, um zu definieren, welcher Code zu einem 'if', 'elif' oder 'else' gehört. 
+Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
+
+        print("\nFrage 4: Welche Auswirkung hat es, wenn der Code nach einem 'if', 'elif' oder 'else'-Statement nicht korrekt eingerückt ist?")
+        print("1) Der Code wird ignoriert und nicht ausgeführt")
+        print("2) Es führt zu einem Syntaxfehler")
+        print("3) Der Code wird trotzdem ausgeführt, aber mit Verzögerung")
+        print("4) Der Code wird automatisch korrigiert")
+        check_answer("2")  # Die richtige Antwort ist "2"
+
+
+
+
 
     # definition for the advanced learning level
     def advanced_unit():
