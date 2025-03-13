@@ -61,12 +61,12 @@ def main():
         global score, counter # changes the value of the global variable
 
         for i in range(5, 0, -1):
-            if user_response != response and response_tries > 1:
+            if user_response.strip() != response and response_tries > 1:
                 print("\nFalsche Lösung!")
                 print(f"Du hast noch {i - 1} Versuche!")
                 user_response = input("\nDeine Lösung: ")
                 response_tries -= 1
-            elif response_tries >= 1 and user_response == response:
+            elif response_tries >= 1 and user_response.strip() == response:
                 print("Super! Das ist richtig!")
                 counter += 1
                 # Calculation of score points depending on the number of attempts required
@@ -79,7 +79,7 @@ def main():
                 response_tries -= 6
                 Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
-            elif response_tries == 1 and user_response != response:
+            elif response_tries == 1 and user_response.strip() != response:
                 response_tries -= 6
                 print("\n\nDie richtige Antwort wäre: " + str(response))
                 print("\nDu hast deine Versuche aufgebraucht!")
@@ -102,7 +102,7 @@ def main():
                 print("Super! Dein Code ist korrekt.")
                 counter += 1
                 # Calculation of score points depending on the number of attempts required
-                if response_tries == 5:
+                if response_tries >= 5:
                  score += 4
                 if response_tries >= 2 and response_tries <= 4:
                     score += 2
@@ -147,11 +147,11 @@ def main():
     def beginner_unit(): 
         # description
         print("""
-        Lerneinheit für Anfänger:
-        - Was sind Variablen und wie verwendest du sie?
-        - Wie erstellst du Schleifen in Python?
-        - Funktionen definieren und anwenden
-        Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
+Lerneinheit für Anfänger:
+- Was sind Variablen und wie verwendest du sie?
+- Wie erstellst du Schleifen in Python?
+- Funktionen definieren und anwenden
+Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
         input() # enter any value to start the learning unit/question catalog
         start_learning()
@@ -168,9 +168,10 @@ def main():
               
 Eine Variable in Python ist ein Speicherplatz für Daten, dem ein Name zugewiesen wird. Sie ermöglicht es, Werte zu speichern und später im Code wiederzuverwenden.
 Eigenschaften von Variablen in Python:
-- Dynamische Typisierung: Du musst den Datentyp nicht angeben, Python erkennt ihn automatisch.
-- Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
-- Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).""")
+    - Dynamische Typisierung: Du musst den Datentyp (String, Float, Integer, ...)nicht angeben, Python erkennt ihn automatisch.
+    - Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
+    - Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).
+    - Zu empfehlen: Leerzeichen zwischen Variable, =, und Wert, der in der Variable gespeichert werden soll""")
         print("\nFrage 1: Was ist eine Variable in Python?")
         print("1) Eine Funktion")
         print("2) Ein Datentyp")
@@ -179,7 +180,7 @@ Eigenschaften von Variablen in Python:
         check_answer("3")  # the correct answer is "3"
 
         # second element: input / creation of a program code
-        print("""\n######## print()- Funktion ########
+        print("""\n######## print()- Befehl ########
 
 Indem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben. 
 Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird der Wert der Variable in der Konsole ausgegeben.""")
@@ -188,59 +189,84 @@ Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird d
         check_code('print("Hello World!")')
 
         # third element: answering a question 
-        print("""\n######## Schleifen ########
-Eine Schleife in Python ist eine wiederholende Anweisung, die dazu dient, Code mehrfach auszuführen, solange eine bestimmte Bedingung erfüllt ist.
+        print("""\n######## Mathematische Rechnungen ########
+Addition: +
+Subtraktion: -
+Multiplikation: *
+Division: /
 
-Es gibt zwei Hauptarten von Schleifen:
-- for-Schleife: wird verwendet, um über eine Sequenz (Liste, String, Range etc.) zu iterieren.
-- while-Schleife: wiederholt sich, solange eine Bedingung True ist.""")
-        print("\nFrage 3: Wie erstelle ich eine Schleife in Python?")
-        print("1) Mit einer Funktion")
-        print("2) Mit einer Bedingung")
-        print("3) Mit 'for' oder 'while'")
-        print("4) Mit 'if' und 'else'")
-        check_answer("3")  # the correct answer is "3"
+Man kann auch 2 Variablen miteinander verrechnen. Erstelle eine neue Variable 'litre',
+welche die Variable 'price' durch die Variable 'litre_price' teilt:
+price = 72
+litre_price = 1,80
+""")
+        check_code("litre = price / litre_price")
 
         # fourth element: answering a question
-        print("\nFrage 4: Wie definierst du eine Funktion in Python?")
-        print("1) Mit 'function'")
-        print("2) Mit 'def'")
-        print("3) Mit 'lambda'")
-        print("4) Mit 'func'")
-        check_answer("2")  # the correct answer is "2"
+        print("Frage 4: Gib nun den Wert der neuen Variable aus!")
+        check_code('print(litre)')
+
             # fourth element: answering a question
 
     def second_learning_level():
         global score, counter # changes the value of the global variable
         score = 0
         counter = 0
-        print("\nFrage 1: Was ist eine Liste in Python?")
-        print("1) Eine Variable")
-        print("2) Eine Sammlung von Werten")
-        print("3) Ein Datentyp")
-        print("4) Eine Schleife")
+        
+        #first question
+        print("""\n\n######## input()-Befehl ########
+
+Der Input-Befehl wird verwendet, wenn man eine Eingabe des Nutzers in einer Variable speichern will.
+Die Eingabe des Nutzers wird als sogenannter String gespeichert. 
+Wenn man mit der Variable weiter rechnen will, muss man den Input-Befehl in einen int()- (ganze Zahl) oder float()- (Dezimalzahl) Befehl schreiben.
+Beispiel: variable = float(input("Zahl: "))
+Somit wird eine Zahl in der Variable gespeichert""")
+        print('\nFrage 1: Frage den Nutzer nach einer Zahl (input("Zahl: ")und speichere diesehn Ganzzahlenwert (Integer) vom Nutzer in einer Variable "number"')
+        check_code('number = int(input("Zahl: "))')
+        
+        
+        #second question
+        print("""\n\n######## Variable und String in einem print()-Befehl #########
+
+Indem man in dem print()-Befehl zwei Strings mit einem plus verbindet, werden beide nacheinander ausgegeben.
+Genauso läuft es, wenn man einen String durch ein + mit einer Variable verbindet (Leerzeichen zwischen Elementen), 
+VORAUSGESETZT ein String ist in der Variable gespeichert.""")
+        print('''\nFrage 2: Folgende Variable ist schon im Programmcode:
+name = "Max Mustermann"
+In der Konsole soll nun folgendes stehen: Dein name ist Max
+Schreibe diesen Code!''')
+        check_code('print("Dein Name ist " + name)')
+        
+        #third question
+
+        print('''
+######## print(f"") ######## 
+              
+Wie gerade schon erwähnt, können nur Strings mit Strings zusammen angezeigt werden,
+oder ein Integer mit einem Integer verrechnet und das Ergebnis in der Konsole angezeigt.
+Falls eine Variable einen Integer oder Float speichert, kann dieser trotzdem mit einem String ausgegeben werden:
+Beispiel:
+number = 5
+print(f"Deiner Zahl: {number}")''')
+        print('''Frage 3: Wie kann man kann man ein String und eine in einer Variable gespeicherte Zahl wie im Beispiel zusammen ausgeben?
+1) String + Variable in der print-Funktion
+2) durch ein "f" vor dem String und an passender Stelle die Variable in geschweiften Klammern
+3) gar nicht
+4) durch "f" vor dem String und dahinter die Variable mit + hinzufügen''')
         check_answer("2")
+        
+        
+        #fourth question
 
-        print("\nFrage 2: Wie iteriert man durch eine Liste in Python?")
-        print("1) Mit 'for' oder 'while'")
-        print("2) Mit 'if'")
-        print("3) Mit einer Funktion")
-        print("4) Mit einer Klasse")
-        check_answer("1")
-
-        print("\nFrage 3: Wie erstellt man eine Klasse in Python?")
-        print("1) Mit 'def'")
-        print("2) Mit 'class'")
-        print("3) Mit 'function'")
-        print("4) Mit 'type'")
-        check_answer("2")
-
-        print("\nFrage 4: Was bedeutet 'self' in Klassenmethoden?")
-        print("1) Eine Variable")
-        print("2) Ein Parameter")
-        print("3) Eine Referenz auf die Instanz")
-        print("4) Eine Schleife")
-        check_answer("3")
+        print('''
+Eine andere Möglichkeit wäre die Variable durch str() in einen String umzuwandeln.
+Dadurch kann man die Variable wie am Anfang durch ein plus zu dem String im print-Befehl hinzufügen.
+Beispiel: print("Deine Zahl: " + str(number))''')
+        print('''\nFrage 4: Folgender Code ist gegeben:
+kilometres = 200
+Schreibe einen Code damit folgendes in der Konsole angezeigt wird (mit der gerade beschirebenen Methode!!):
+Kilometer zu fahren: 200''')
+        check_code('print("Kilometer zu fahren: " + str(kilometres))')
 
 
         print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
