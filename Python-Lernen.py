@@ -102,7 +102,7 @@ def main():
                 print("Super! Dein Code ist korrekt.")
                 counter += 1
                 # Calculation of score points depending on the number of attempts required
-                if response_tries == 5:
+                if response_tries >= 5:
                  score += 4
                 if response_tries >= 2 and response_tries <= 4:
                     score += 2
@@ -147,11 +147,11 @@ def main():
     def beginner_unit(): 
         # description
         print("""
-        Lerneinheit für Anfänger:
-        - Was sind Variablen und wie verwendest du sie?
-        - Wie erstellst du Schleifen in Python?
-        - Funktionen definieren und anwenden
-        Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
+Lerneinheit für Anfänger:
+- Was sind Variablen und wie verwendest du sie?
+- Wie erstellst du Schleifen in Python?
+- Funktionen definieren und anwenden
+Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
         input() # enter any value to start the learning unit/question catalog
         start_learning()
@@ -168,9 +168,9 @@ def main():
               
 Eine Variable in Python ist ein Speicherplatz für Daten, dem ein Name zugewiesen wird. Sie ermöglicht es, Werte zu speichern und später im Code wiederzuverwenden.
 Eigenschaften von Variablen in Python:
-- Dynamische Typisierung: Du musst den Datentyp nicht angeben, Python erkennt ihn automatisch.
-- Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
-- Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).""")
+    - Dynamische Typisierung: Du musst den Datentyp nicht angeben, Python erkennt ihn automatisch.
+    - Zuweisung mit =: Eine Variable wird mit = einem Wert zugewiesen.
+    - Namen dürfen Buchstaben, Zahlen und _ enthalten (dürfen aber nicht mit einer Zahl beginnen).""")
         print("\nFrage 1: Was ist eine Variable in Python?")
         print("1) Eine Funktion")
         print("2) Ein Datentyp")
@@ -188,26 +188,21 @@ Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird d
         check_code('print("Hello World!")')
 
         # third element: answering a question 
-        print("""\n######## Schleifen ########
-Eine Schleife in Python ist eine wiederholende Anweisung, die dazu dient, Code mehrfach auszuführen, solange eine bestimmte Bedingung erfüllt ist.
+        print("""\n######## Mathematische Rechnungen ########
+Addition: +
+Subtraktion: -
+Multiplikation: *
+Division: /
 
-Es gibt zwei Hauptarten von Schleifen:
-- for-Schleife: wird verwendet, um über eine Sequenz (Liste, String, Range etc.) zu iterieren.
-- while-Schleife: wiederholt sich, solange eine Bedingung True ist.""")
-        print("\nFrage 3: Wie erstelle ich eine Schleife in Python?")
-        print("1) Mit einer Funktion")
-        print("2) Mit einer Bedingung")
-        print("3) Mit 'for' oder 'while'")
-        print("4) Mit 'if' und 'else'")
-        check_answer("3")  # the correct answer is "3"
+Man kann auch 2 Variablen miteinander verrechnen. Erstelle eine neue Variable 'litre',
+welche die Variable 'price' durch die Variable 'litre_price' teilt:
+price = 72
+litre_price = 1,80
+""")
+        check_code("litre = price / litre_price")
 
         # fourth element: answering a question
-        print("\nFrage 4: Wie definierst du eine Funktion in Python?")
-        print("1) Mit 'function'")
-        print("2) Mit 'def'")
-        print("3) Mit 'lambda'")
-        print("4) Mit 'func'")
-        check_answer("2")  # the correct answer is "2"
+
             # fourth element: answering a question
 
     def second_learning_level():
