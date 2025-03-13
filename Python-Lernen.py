@@ -276,9 +276,8 @@ Kilometer zu fahren: 200''')
     def intermediate_unit():
         # Description
         print("""
-        Lerneinheit für Mittelstufe:
-        - If-Statements – Bedingungen in Schleifen für flexible Programme.  
-        - Definitionen – Eigene Routinen mit Parametern erstellen.
+        - If-Statements – Bedingungen in Schleifen für flexible Programme.
+        - Mit `if`, `elif` und `else` kannst du unterschiedliche Codeblöcke je nach Bedingung ausführen.
         Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
 
