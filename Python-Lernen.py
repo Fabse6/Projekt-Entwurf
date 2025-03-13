@@ -61,12 +61,12 @@ def main():
         global score, counter # changes the value of the global variable
 
         for i in range(5, 0, -1):
-            if user_response != response and response_tries > 1:
+            if user_response.strip() != response and response_tries > 1:
                 print("\nFalsche Lösung!")
                 print(f"Du hast noch {i - 1} Versuche!")
                 user_response = input("\nDeine Lösung: ")
                 response_tries -= 1
-            elif response_tries >= 1 and user_response == response:
+            elif response_tries >= 1 and user_response.strip() == response:
                 print("Super! Das ist richtig!")
                 counter += 1
                 # Calculation of score points depending on the number of attempts required
@@ -79,7 +79,7 @@ def main():
                 response_tries -= 6
                 Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
-            elif response_tries == 1 and user_response != response:
+            elif response_tries == 1 and user_response.strip() != response:
                 response_tries -= 6
                 print("\n\nDie richtige Antwort wäre: " + str(response))
                 print("\nDu hast deine Versuche aufgebraucht!")
