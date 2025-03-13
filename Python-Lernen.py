@@ -239,19 +239,34 @@ Schreibe diesen Code!''')
         
         #third question
 
-        print("\nFrage 3: Wie erstellt man eine Klasse in Python?")
-        print("1) Mit 'def'")
-        print("2) Mit 'class'")
-        print("3) Mit 'function'")
-        print("4) Mit 'type'")
+        print('''
+######## print(f"") ######## 
+              
+Wie gerade schon erwähnt, können nur Strings mit Strings zusammen angezeigt werden,
+oder ein Integer mit einem Integer verrechnet und das Ergebnis in der Konsole angezeigt.
+Falls eine Variable einen Integer oder Float speichert, kann dieser trotzdem mit einem String ausgegeben werden:
+Beispiel:
+number = 5
+print(f"Deiner Zahl: {number}")''')
+        print('''Frage 3: Wie kann man kann man ein String und eine in einer Variable gespeicherte Zahl wie im Beispiel zusammen ausgeben?
+1) String + Variable in der print-Funktion
+2) durch ein "f" vor dem String und an passender Stelle die Variable in geschweiften Klammern
+3) gar nicht
+4) durch "f" vor dem String und dahinter die Variable mit + hinzufügen''')
         check_answer("2")
+        
+        
+        #fourth question
 
-        print("\nFrage 4: Was bedeutet 'self' in Klassenmethoden?")
-        print("1) Eine Variable")
-        print("2) Ein Parameter")
-        print("3) Eine Referenz auf die Instanz")
-        print("4) Eine Schleife")
-        check_answer("3")
+        print('''
+Eine andere Möglichkeit wäre die Variable durch str() in einen String umzuwandeln.
+Dadurch kann man die Variable wie am Anfang durch ein plus zu dem String im print-Befehl hinzufügen.
+Beispiel: print("Deine Zahl: " + str(number))''')
+        print('''\nFrage 4: Folgender Code ist gegeben:
+kilometres = 200
+Schreibe einen Code damit folgendes in der Konsole angezeigt wird (mit der gerade beschirebenen Methode!!):
+Kilometer zu fahren: 200''')
+        check_code('print("Kilometer zu fahren: " + str(kilometres))')
 
 
         print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
