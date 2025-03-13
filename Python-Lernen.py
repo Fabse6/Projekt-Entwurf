@@ -77,6 +77,7 @@ def main():
                 if response_tries < 2:
                     score += 1
                 response_tries -= 6
+                Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif response_tries == 1 and user_response != response:
                 response_tries -= 6
@@ -108,6 +109,7 @@ def main():
                 if response_tries < 2:
                     score += 1
                 response_tries -= 6
+                Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif user_code.strip() != expected_code.strip() and response_tries > 1:
                 print("\nFalsch! Versuch es nochmal.")
@@ -175,7 +177,6 @@ Eigenschaften von Variablen in Python:
         print("3) Ein Speicherort für Daten")
         print("4) Ein Schleifen-Konstrukt")
         check_answer("3")  # the correct answer is "3"
-        Enter_to_go_on()
 
         # second element: input / creation of a program code
         print("""\n######## print()- Funktion ########
@@ -185,7 +186,6 @@ Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird d
         print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben")
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
         check_code('print("Hello World!")')
-        Enter_to_go_on()
 
         # third element: answering a question 
         print("""\n######## Schleifen ########
@@ -200,7 +200,6 @@ Es gibt zwei Hauptarten von Schleifen:
         print("3) Mit 'for' oder 'while'")
         print("4) Mit 'if' und 'else'")
         check_answer("3")  # the correct answer is "3"
-        Enter_to_go_on()
 
         # fourth element: answering a question
         print("\nFrage 4: Wie definierst du eine Funktion in Python?")
@@ -246,31 +245,29 @@ Es gibt zwei Hauptarten von Schleifen:
 
         print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
 
-        # Definition for the intermediate learning level
-        def intermediate_unit():
-            # Description
-            print("""
-            Lerneinheit für Mittelstufe:
-            - Listen und Dictionaries verstehen und verwenden
-            - Fehlerbehandlung mit try-except
-            - Funktionen mit mehreren Parametern und Rückgabewerten
+    # Definition for the intermediate learning level
+    def intermediate_unit():
+        # Description
+        print("""
+        Lerneinheit für Mittelstufe:
+        - Listen und Dictionaries verstehen und verwenden
+        - Fehlerbehandlung mit try-except
+        - Funktionen mit mehreren Parametern und Rückgabewerten
+        Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
+        """)
+        input() # Enter any value to start the learning unit/question catalog
 
-            Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
-            """)
-            input() # Enter any value to start the learning unit/question catalog
-
-        # definition for the advanced learning level
-        def advanced_unit():
-            # description
-            print("""
-            Lerneinheit für Fortgeschrittene:
-            - Objektorientierte Programmierung (OOP) in Python
-            - Arbeiten mit Datenstrukturen wie Bäumen und Graphen
-            - Implementierung und Analyse von Algorithmen
-
-            Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
-            """)
-            input() # enter any value to start the learning unit/question catalog
+    # definition for the advanced learning level
+    def advanced_unit():
+        # description
+        print("""
+        Lerneinheit für Fortgeschrittene:
+        - Objektorientierte Programmierung (OOP) in Python
+        - Arbeiten mit Datenstrukturen wie Bäumen und Graphen
+        - Implementierung und Analyse von Algorithmen
+        Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
+        """)
+        input() # enter any value to start the learning unit/question catalog
 
 
 
