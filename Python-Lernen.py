@@ -180,7 +180,7 @@ Eigenschaften von Variablen in Python:
         check_answer("3")  # the correct answer is "3"
 
         # second element: input / creation of a program code
-        print("""\n######## print()- Funktion ########
+        print("""\n######## print()- Befehl ########
 
 Indem man den Befehl print() eingibt, kann man etwas in der Konsole ausgeben. 
 Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird der Wert der Variable in der Konsole ausgegeben.""")
@@ -204,7 +204,7 @@ litre_price = 1,80
 
         # fourth element: answering a question
         print("Frage 4: Gib nun den Wert der neuen Variable aus!")
-        check_code('print("litre")')
+        check_code('print(litre)')
 
             # fourth element: answering a question
 
@@ -212,19 +212,32 @@ litre_price = 1,80
         global score, counter # changes the value of the global variable
         score = 0
         counter = 0
-        print("\nFrage 1: Was ist eine Liste in Python?")
-        print("1) Eine Variable")
-        print("2) Eine Sammlung von Werten")
-        print("3) Ein Datentyp")
-        print("4) Eine Schleife")
-        check_answer("2")
+        
+        #first question
+        print("""\n\n######## input()-Befehl ########
 
-        print("\nFrage 2: Wie iteriert man durch eine Liste in Python?")
-        print("1) Mit 'for' oder 'while'")
-        print("2) Mit 'if'")
-        print("3) Mit einer Funktion")
-        print("4) Mit einer Klasse")
-        check_answer("1")
+Der Input-Befehl wird verwendet, wenn man eine Eingabe des Nutzers in einer Variable speichern will.
+Die Eingabe des Nutzers wird als sogenannter String gespeichert. 
+Wenn man mit der Variable weiter rechnen will, muss man den Input-Befehl in einen int()- (ganze Zahl) oder float()- (Dezimalzahl) Befehl schreiben.
+Beispiel: variable = float(input("Zahl: "))
+Somit wird eine Zahl in der Variable gespeichert""")
+        print('\nFrage 1: Frage den Nutzer nach einer Zahl (input("Zahl: ")und speichere diesehn Ganzzahlenwert (Integer) vom Nutzer in einer Variable "number"')
+        check_code('number = int(input("Zahl: "))')
+        
+        
+        #second question
+        print("""\n\n######## Variable und String in einem print()-Befehl #########
+
+Indem man in dem print()-Befehl zwei Strings mit einem plus verbindet, werden beide nacheinander ausgegeben.
+Genauso läuft es, wenn man einen String durch ein + mit einer Variable verbindet (Leerzeichen zwischen Elementen), 
+VORAUSGESETZT ein String ist in der Variable gespeichert.""")
+        print('''\nFrage 2: Folgende Variable ist schon im Programmcode:
+name = "Max Mustermann"
+In der Konsole soll nun folgendes stehen: Dein name ist Max
+Schreibe diesen Code!''')
+        check_code('print("Dein Name ist " + name)')
+        
+        #third question
 
         print("\nFrage 3: Wie erstellt man eine Klasse in Python?")
         print("1) Mit 'def'")
