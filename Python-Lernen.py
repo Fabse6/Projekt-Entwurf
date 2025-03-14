@@ -296,8 +296,6 @@ Kilometer zu fahren: 200''')
         check_code('print("Kilometer zu fahren: " + str(kilometres))')
 
 
-
- 
    
     ### Definition for the intermediate learning level ###
 
@@ -382,15 +380,15 @@ Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
         check_answer("2")  # the correct answer is "2"
         
 
+    ### Definition for the advanced learning level ###
 
-    # definition for the advanced learning level
     def advanced_unit():
         # Description
         print("""
-        Lerneinheit für Fortgeschrittene:
-        - Wie man Funktionen erstellt und aufruft.
-        - Wie Funktionen Parameter entgegennehmen, um dynamisch zu arbeiten.
-        - Wie man den Rückgabewert einer Funktion nutzt.
+        Lerneinheit für Fortgeschrittene. Hier erfährtst du...:
+        - wie man Funktionen erstellt und aufruft.
+        - wie Funktionen Parameter entgegennehmen, um dynamisch zu arbeiten.
+        - wie man den Rückgabewert einer Funktion nutzt.
         Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
         input() # enter any value to start the learning unit/question catalog
@@ -406,12 +404,10 @@ Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
     def fourth_learning_level():
 
         # first element: answering a question
-        print("""
-######## Funktionen in Python ########
+        print("""\n######## Funktionen in Python ########
 
 In Python verwenden wir den 'def'-Befehl, um eine Funktion zu definieren. Eine Funktion ist ein benannter Codeblock, 
 der eine bestimmte Aufgabe ausführt und optional einen Wert zurückgibt. Funktionen ermöglichen es, Code zu modularisieren und wiederzuverwenden.
-
 Eigenschaften von Funktionen in Python:
 
     - Eine Funktion wird mit dem Schlüsselwort `def` definiert.
@@ -426,9 +422,8 @@ Eigenschaften von Funktionen in Python:
         print("4) Mit dem Schlüsselwort 'func'")
         check_answer("2")  
 
-        # second question
-        print("""
-######## Parameter in Funktionen ########
+        # second element: Creating a function 'def'
+        print("""\n######## Parameter in Funktionen ########
 
 Eine Funktion kann Parameter entgegennehmen, die es ermöglichen, Daten an die Funktion zu übergeben und deren Verhalten zu steuern. 
 In Python werden Parameter in den Klammern nach dem Funktionsnamen angegeben.
@@ -437,15 +432,15 @@ In Python werden Parameter in den Klammern nach dem Funktionsnamen angegeben.
 
         print("\nErstelle eine Funktion, die überprüft ob eine Zahl gerade oder ungerade ist.")
         print("Die Zahl wird mit Hilfe der variablen 'number' gespeichert")
+        print("Name der Funktion: 'check_even_or_odd()'")
         check_code("""def check_even_or_odd(number):""")  
         
 
         # third question
-        print("""
-######## Funktionsaufruf ########
+        print("""\n######## Funktionsaufruf ########
 
 Nachdem eine Funktion definiert wurde, kann sie durch ihren Namen aufgerufen werden, wobei eventuell benötigte Argumente übergeben werden. 
-Der Funktionsaufruf sieht folgendermaßen aus: `funktionsname(argumente)`.""")
+Der Funktionsaufruf sieht folgendermaßen aus: 'funktionsname(argumente)'.""")
 
         print("\nFrage 3: Wie rufst du eine Funktion in Python auf?")
         print("1) Mit dem Schlüsselwort 'call()'")
@@ -455,18 +450,20 @@ Der Funktionsaufruf sieht folgendermaßen aus: `funktionsname(argumente)`.""")
         check_answer("2")  
 
         # fourth question
-        print("""
-######## Rückgabewert einer Funktion ########
+        print("""\n######## Rückgabewert einer Funktion ########
 
 Eine Funktion kann mit 'return' einen Wert zurückgeben, den man weiterverwenden kann. Ohne 'return' 
-gibt eine Funktion automatisch `None` zurück.""")
+gibt eine Funktion automatisch 'None' zurück.""")
 
-        print("\nFrage 4: Was gibt eine Funktion zurück, wenn sie keinen 'return'-Befehl enthält?")
-        print("1) Einen Fehler")
-        print("2) Einen leeren Wert")
-        print("3) Die Zahl 0")
-        print("4) `None`")
-        check_answer("4")  
+        print("\nBeispiel. Im nachfolgenden Programm sollen zwei Zahlen mit Hilfe der Befehle 'def' und 'return' addiert werden")
+        print("Der Code ist fordefiniert mit:")
+        print("\ndef addiere(a, b)")
+        print("     return....")
+        print("\Beispielaufruf:")
+        print("ergebnis = addiere (3, 5)")
+        print("print(ergebnis)   hier wäre das Ergebnis 8")
+        print("***Füge den 'return'-Befehl ein!***")
+        check_code("return a + b")  
         
 
 
