@@ -232,8 +232,8 @@ Indem man in dem print()-Befehl zwei Strings mit einem plus verbindet, werden be
 Genauso läuft es, wenn man einen String durch ein + mit einer Variable verbindet (Leerzeichen zwischen Elementen), 
 VORAUSGESETZT ein String ist in der Variable gespeichert.""")
         print('''\nFrage 2: Folgende Variable ist schon im Programmcode:
-name = "Max Mustermann"
-In der Konsole soll nun folgendes stehen: Dein name ist Max
+name = "Max"
+In der Konsole soll nun folgendes stehen: Dein Name ist Max
 Schreibe diesen Code!''')
         check_code('print("Dein Name ist " + name)')
         
