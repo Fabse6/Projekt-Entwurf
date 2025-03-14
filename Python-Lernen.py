@@ -91,7 +91,7 @@ def main():
                 print("Drücke 'Enter', um das Level nochmal zu versuchen")
                 input()
                 restart_program()
-                counter += 1
+                
 
         check_next_level()
         
