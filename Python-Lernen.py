@@ -17,9 +17,9 @@ def main():
         Mit PyLearn kannst du Python Schritt für Schritt erlernen – von den Grundlagen bis zu fortgeschrittenen Themen!
 
         Wähle deine Lernstufe:
-        [1] Anfänger – Grundlagen wie Variablen, Schleifen und Funktionen
-        [2] Mittelstufe – Listen, Dictionaries, Fehlerbehandlung
-        [3] Fortgeschritten – OOP, Datenstrukturen, Algorithmen
+        [1] Anfänger – Grundlagen wie Variablen, Berechnungen und Eingaben
+        [2] Mittelstufe – Tiefgehender Inhalt mit If_Statements
+        [3] Fortgeschritten – Komplexe Thematiken mit Funktionen bewerkstelligen 
 
         ************************************
         """)
