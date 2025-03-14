@@ -157,7 +157,7 @@ def main():
         
         # If the variable counter >= 10 there is not the option "nächste"
         elif counter >= 10:
-            print(f"\nDu hast {score} von {counter * 4} Punkten erreicht!")
+            print(f"\nDu hast {score} von {(counter - 6) * 4} Punkten erreicht!")
             print("möchstest du zurück zum Start oder das Programm beenden? (start/'Enter')")
             choice = input().strip().lower()
             if choice == "start":
@@ -281,10 +281,10 @@ Schreibe diesen Code!''')
 Wie gerade schon erwähnt, können nur Strings mit Strings zusammen angezeigt werden,
 oder ein Integer mit einem Integer verrechnet und das Ergebnis in der Konsole angezeigt.
 Falls eine Variable einen Integer oder Float speichert, kann dieser trotzdem mit einem String ausgegeben werden:
-Beispiel:
+\nBeispiel:
 number = 5
 print(f"Deiner Zahl: {number}")''')
-        print('''Frage 3: Wie kann man kann man ein String und eine in einer Variable gespeicherte Zahl wie im Beispiel zusammen ausgeben?
+        print('''\nFrage 3: Wie kann man kann man ein String und eine in einer Variable gespeicherte Zahl wie im Beispiel zusammen ausgeben?
 1) String + Variable in der print-Funktion
 2) durch ein "f" vor dem String und an passender Stelle die Variable in geschweiften Klammern
 3) gar nicht
@@ -311,7 +311,7 @@ Kilometer zu fahren: 200''')
         # Description
         print("""
         Lerninhalte für das mittlere Schwierigkeitsniveau:      
-        - If-Statements – Bedingungen in Schleifen für flexible Programme.
+        - If-Statements – Bedingungen für flexible Programme.
         - Mit `if`, `elif` und `else` kannst du unterschiedliche Codeblöcke je nach Bedingung ausführen.
         Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
@@ -418,7 +418,7 @@ In Python verwenden wir den 'def'-Befehl, um eine Funktion zu definieren. Eine F
 der eine bestimmte Aufgabe ausführt und optional einen Wert zurückgibt. Funktionen ermöglichen es, Code zu modularisieren und wiederzuverwenden.
 Eigenschaften von Funktionen in Python:
 
-    - Eine Funktion wird mit dem Schlüsselwort `def` definiert.
+    - Eine Funktion wird mit dem Schlüsselwort 'def' definiert.
     - Funktionen können Parameter entgegennehmen.
     - Eine Funktion kann optional ein Ergebnis mit 'return' zurückgeben.""")
 
@@ -440,11 +440,11 @@ In Python werden Parameter in den Klammern nach dem Funktionsnamen angegeben.
 
         print("\nErstelle eine Funktion, die eine Person mit ihrem Namen begrüßt.")
         print("Der Code ist Vordefiniert mit:")
-        print("def greet(name):")
+        print("\ndef greet(name):")
         print("    'Print a greeting message.'")
-        print("\nExample calls")
+        print("\n# Example calls")
         print('greet("Emma")    # Outout: Hello, Emma!')
-        print("***Füge das Element der Funktion ein!***")
+        print("\n***Füge das Element der Funktion ein!***")
         check_code("def greet(name):")  
         
 
@@ -471,10 +471,10 @@ gibt eine Funktion automatisch 'None' zurück.""")
         print("Der Code ist fordefiniert mit:")
         print("\ndef addiere(a, b)")
         print("     return....")
-        print("\Beispielaufruf:")
+        print("\nBeispielaufruf:")
         print("ergebnis = addiere (3, 5)")
-        print("print(ergebnis)   hier wäre das Ergebnis 8")
-        print("***Füge den 'return'-Befehl ein!***")
+        print("print(ergebnis)   # hier wäre das Ergebnis 8")
+        print("\n***Füge den 'return'-Befehl ein!***")
         check_code("return a + b")  
         
 
