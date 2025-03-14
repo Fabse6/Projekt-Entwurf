@@ -154,9 +154,9 @@ Lerneinheit für Anfänger:
 Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
         input() # enter any value to start the learning unit/question catalog
-        start_learning()
+        start_learning_1()
 
-    def start_learning():
+    def start_learning_1():
         global score, counter # changes the value of the global variable
         score = 0
         counter = 0
@@ -282,9 +282,9 @@ Kilometer zu fahren: 200''')
         """)
 
         input() # enter any value to start the learning unit/question catalog
-        start_learning()
+        start_learning_2()
 
-    def start_learning():
+    def start_learning_2():
         global score, counter # changes the value of the global variable
         score = 0
         counter = 0
@@ -370,9 +370,9 @@ Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
         """)
         input() # enter any value to start the learning unit/question catalog
 
-        start_learning()
+        start_learning_3()
 
-    def start_learning():
+    def start_learning_3():
         global score, counter # changes the value of the global variable
         score = 0
         counter = 0
