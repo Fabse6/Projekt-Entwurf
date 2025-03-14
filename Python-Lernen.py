@@ -60,7 +60,6 @@ def main():
 
     # Checks if user's input for the questions ist correct
     def check_answer(response):
-        #checks if user's input is correct or not, if no tries left user has to start again  
         user_response = input("Deine Lösung: ")  # Entering the solution
         response_tries = 5                       # Number of attempts
         global score, counter                    # Changes the value of the global variable
@@ -86,18 +85,18 @@ def main():
                 break #ends the loop so that the current score is still displayed (unlike return)
             elif response_tries == 1 and user_response.strip() != response:     # If the wrong answer was entered and the variable responstries = 1
                 response_tries -= 6
+                counter += 1
                 print("\n\nDie richtige Antwort wäre: " + str(response))
                 print("\nDu hast deine Versuche aufgebraucht!")
                 print("Drücke 'Enter', um das Level nochmal zu versuchen")
                 input()
                 restart_program()
                 
-
         check_next_level()
         
-
+    
+    # Checks if user's input for for entering the program code ist correct
     def check_code(expected_code):  
-        #checks if user's input is correct. If no tries left user has to start again
         user_code = input("Deine Eingabe: ")
         response_tries = 5
         global score, counter # changes the value of the global variable
@@ -132,13 +131,14 @@ def main():
         check_next_level()
         
 
-
+    # Check if the next level has been reached
     def check_next_level():
         global counter
-        if counter == 4:
+        # If the variable counter = 4 there is also the option "nächste"
+        if counter == 4: 
             print(f"\nDu hast {score} von {counter * 4} Punkten erreicht!")
             print("möchstest du zur nächten Lerneinheit wechseln, zurück zum Start oder das Programm beenden? (nächste/start/'Enter')")
-            choice = input().strip().lower()
+            choice = input().strip().lower()  # eliminates extra spaces and capitalization
             if choice == "nächste":
                 second_learning_level()
             elif choice == "start":
@@ -146,7 +146,8 @@ def main():
             else:
                 print("Programm beendet")
                 exit()  
-         
+        
+        # If the variable counter >= 10 there is not the option "nächste"
         elif counter >= 10:
             print(f"\nDu hast {score} von {counter * 4} Punkten erreicht!")
             print("möchstest du zurück zum Start oder das Programm beenden? (start/'Enter')")
@@ -157,9 +158,20 @@ def main():
                 print("Programm beendet")
                 exit()  
 
-        # definition for the learning level “beginner”
+
+
+###############################################################################################################################
+        
+        ### Start of the declaration of tasks ### 
+
+###############################################################################################################################   
+
+
+
+    ### Definition for the learning level “beginner” ###
+
     def beginner_unit(): 
-        # description
+        # Description
         print("""
 Lerneinheit für Anfänger:
 - Was sind Variablen und wie verwendest du sie?
@@ -175,6 +187,8 @@ Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         score = 0
         counter = 0
         first_learning_level()
+
+    ### first_learning_level ###
 
     def first_learning_level():
         # first element: answering a question
@@ -220,15 +234,16 @@ litre_price = 1,80
         print("Frage 4: Gib nun den Wert der neuen Variable aus!")
         check_code('print(litre)')
 
-            # fourth element: answering a question
+
+    ### second_learning_level ###
 
     def second_learning_level():
         global score, counter # changes the value of the global variable
         score = 0
         counter = 6
         
-        #first question
-        print("""\n\n######## input()-Befehl ########
+        # first question
+        print("""\n######## input()-Befehl ########
 
 Der Input-Befehl wird verwendet, wenn man eine Eingabe des Nutzers in einer Variable speichern will.
 Die Eingabe des Nutzers wird als sogenannter String gespeichert. 
@@ -239,20 +254,19 @@ Somit wird eine Zahl in der Variable gespeichert""")
         check_code('number = int(input("Zahl: "))')
         
         
-        #second question
+        # second element: print with a variable
         print("""\n\n######## Variable und String in einem print()-Befehl #########
 
 Indem man in dem print()-Befehl zwei Strings mit einem plus verbindet, werden beide nacheinander ausgegeben.
 Genauso läuft es, wenn man einen String durch ein + mit einer Variable verbindet (Leerzeichen zwischen Elementen), 
 VORAUSGESETZT ein String ist in der Variable gespeichert.""")
-        print('''\nFrage 2: Folgende Variable ist schon im Programmcode:
+        print('''\n\nFrage 2: Folgende Variable ist schon im Programmcode:
 name = "Max Mustermann"
 In der Konsole soll nun folgendes stehen: Dein name ist Max
 Schreibe diesen Code!''')
         check_code('print("Dein Name ist " + name)')
         
         #third question
-
         print('''
 ######## print(f"") ######## 
               
@@ -270,8 +284,7 @@ print(f"Deiner Zahl: {number}")''')
         check_answer("2")
         
         
-        #fourth question
-
+        #fourth element: converting a variable into a string in print
         print('''
 Eine andere Möglichkeit wäre die Variable durch str() in einen String umzuwandeln.
 Dadurch kann man die Variable wie am Anfang durch ein plus zu dem String im print-Befehl hinzufügen.
@@ -283,13 +296,15 @@ Kilometer zu fahren: 200''')
         check_code('print("Kilometer zu fahren: " + str(kilometres))')
 
 
-        print("\nGlückwunsch! Du hast die Lerneinheit abgeschlossen!")
+
  
    
-    # Definition for the intermediate learning level
+    ### Definition for the intermediate learning level ###
+
     def intermediate_unit():
         # Description
         print("""
+        Lerninhalte für das mittlere Schwierigkeitsniveau:      
         - If-Statements – Bedingungen in Schleifen für flexible Programme.
         - Mit `if`, `elif` und `else` kannst du unterschiedliche Codeblöcke je nach Bedingung ausführen.
         Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
@@ -306,12 +321,10 @@ Kilometer zu fahren: 200''')
 
     def third_learning_level():
         # first element: answering a question
-        print("""
-######## If-Statements ########
+        print("""######## If-Statements ########
               
 Ein if-Statement ermöglicht es, Entscheidungen im Code zu treffen. Es überprüft eine Bedingung und 
 führt den zugehörigen Codeblock nur aus, wenn diese erfüllt ist.
-
 Eigenschaften von If-Statements in Python:
 
     - Bedingungsauswertung: Der Ausdruck im if-Statement muss True oder False ergeben.
@@ -326,9 +339,8 @@ Eigenschaften von If-Statements in Python:
         check_answer("2")  # the correct answer is "2"
 
 
-        #second question
-        print("""
-######## Einführung in die Verwendung von 'if'-Statements ########
+        #second element: Creating an If-Statement
+        print("""\n######## Einführung in die Verwendung von 'if'-Statements ########
 
 Beispiel: Wenn wir überprüfen möchten, ob ein Name ein bestimmter String ist, wie zum Beispiel "Max", könnten wir ein 'If'-Statement verwenden, um dies zu tun.
 In dieser Aufgabe wirst du ein 'If'-Statement verwenden, um zu überprüfen, ob der Name 'Max' ist. 
@@ -336,7 +348,7 @@ In dieser Aufgabe wirst du ein 'If'-Statement verwenden, um zu überprüfen, ob 
 ######## Deine Aufgabe ########""")
 
         print("\nErstelle den Code, um zu überprüfen, ob ein Name 'Max' ist.")
-        print("Hier ist der vordefinierte Code:")
+        print("Hier ist der vordefinierte Code mit der Variablen 'name':")
         print('name = "Max"')
         print('***Füge die if-Bedingung ein!***')
         check_code("""if name == "Max":""")  
@@ -354,11 +366,10 @@ Es stellt eine Art "Fangnetz" dar, um einen Standardcode auszuführen, wenn kein
         print("2) Es wird automatisch der Code im 'else'-Block ausgeführt")
         print("3) Der Code nach dem 'if'-Block wird ausgeführt")
         print("4) Der Code wird sofort beendet")
-        check_answer("3")  # Die richtige Antwort ist "3"
+        check_answer("3")  # the correct answer is "3"
 
         # fourth question
-        print("""
-######## Einrückung in Python ########
+        print("""\n######## Einrückung in Python ########
 
 In Python ist die Einrückung entscheidend, um zu definieren, welcher Code zu einem 'if', 'elif' oder 'else' gehört. 
 Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
@@ -368,7 +379,7 @@ Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
         print("2) Es führt zu einem Syntaxfehler")
         print("3) Der Code wird trotzdem ausgeführt, aber mit Verzögerung")
         print("4) Der Code wird automatisch korrigiert")
-        check_answer("2")  # Die richtige Antwort ist "2"
+        check_answer("2")  # the correct answer is "2"
         
 
 
