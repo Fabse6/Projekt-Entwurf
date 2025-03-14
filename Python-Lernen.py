@@ -24,7 +24,7 @@ def main():
         ************************************
         """)
 
-        # Input of User-Informations
+    # Input of User-Informations
     while True: # repeats the query for the user input until a correct input is made
         learning_level = input("Gib die Nummer deiner Lernstufe ein (1-3): ") # query of the user for the respective learning level
 
@@ -43,32 +43,37 @@ def main():
             print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
 
 
+###############################################################################################################################
+        
         ### Input ### 
 
+###############################################################################################################################    
     
-    
+    # Restart program in defined situations
     def restart_program():
         main()
-        
+
+    # After each correct answer, press enter to continue
     def Enter_to_go_on():
         print("\nDrücke 'Enter', um weiterzumachen!")
         input()
 
+    # Checks if user's input for the questions ist correct
     def check_answer(response):
         #checks if user's input is correct or not, if no tries left user has to start again  
-        user_response = input("Deine Lösung: ")
-        response_tries = 5  
-        global score, counter # changes the value of the global variable
+        user_response = input("Deine Lösung: ")  # Entering the solution
+        response_tries = 5                       # Number of attempts
+        global score, counter                    # Changes the value of the global variable
 
-        for i in range(5, 0, -1):
-            if user_response.strip() != response and response_tries > 1:
+        for i in range(5, 0, -1):                                           
+            if user_response.strip() != response and response_tries > 1:       # Entering the wrong solution but response tries is >= 1
                 print("\nFalsche Lösung!")
                 print(f"Du hast noch {i - 1} Versuche!")
                 user_response = input("\nDeine Lösung: ")
-                response_tries -= 1
-            elif response_tries >= 1 and user_response.strip() == response:
+                response_tries -= 1                                        
+            elif response_tries >= 1 and user_response.strip() == response:    # Correct entry of the solution
                 print("Super! Das ist richtig!")
-                counter += 1
+                counter += 1                                                   # Increase the variable counter by 1
                 # Calculation of score points depending on the number of attempts required
                 if response_tries == 5:
                  score += 4
@@ -79,7 +84,7 @@ def main():
                 response_tries -= 6
                 Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
-            elif response_tries == 1 and user_response.strip() != response:
+            elif response_tries == 1 and user_response.strip() != response:     # If the wrong answer was entered and the variable responstries = 1
                 response_tries -= 6
                 print("\n\nDie richtige Antwort wäre: " + str(response))
                 print("\nDu hast deine Versuche aufgebraucht!")
