@@ -2,9 +2,9 @@
 #Matrikelnummer von Moritz Mezler: 9582981
 #Matrikelnummer von Fabian Wiedemann: 6415375
 #date: 2025-03-01
-#brief:
+#brief: Programm to learn skills in Python
 
-'Programm to learn basic skills in Python'
+'Programm to learn skills in Python'
 
 def main():
     
