@@ -247,7 +247,8 @@ oder ein Integer mit einem Integer verrechnet und das Ergebnis in der Konsole an
 Falls eine Variable einen Integer oder Float speichert, kann dieser trotzdem mit einem String ausgegeben werden:
 Beispiel:
 number = 5
-print(f"Deiner Zahl: {number}")''')
+print(f"Deine Zahl: {number}")''')
+    
         print('''Frage 3: Wie kann man kann man ein String und eine in einer Variable gespeicherte Zahl wie im Beispiel zusammen ausgeben?
 1) String + Variable in der print-Funktion
 2) durch ein "f" vor dem String und an passender Stelle die Variable in geschweiften Klammern
