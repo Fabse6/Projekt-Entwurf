@@ -89,7 +89,7 @@ def main():
                 counter += 1
 
         check_next_level()
-
+        
 
     def check_code(expected_code):  
         #checks if user's input is correct. If no tries left user has to start again
@@ -125,11 +125,12 @@ def main():
                 restart_program()
 
         check_next_level()
+        
 
 
     def check_next_level():
         global counter
-        if counter >= 4:
+        if counter == 4:
             print(f"\nDu hast {score} von {counter * 4} Punkten erreicht!")
             print("möchstest du zur nächten Lerneinheit wechseln, zurück zum Start oder das Programm beenden? (nächste/start/'Enter')")
             choice = input().strip().lower()
@@ -140,8 +141,16 @@ def main():
             else:
                 print("Programm beendet")
                 exit()  
-
-
+         
+        elif counter >= 10:
+            print(f"\nDu hast {score} von {counter * 4} Punkten erreicht!")
+            print("möchstest du zurück zum Start oder das Programm beenden? (start/'Enter')")
+            choice = input().strip().lower()
+            if choice == "start":
+                restart_program()
+            else:
+                print("Programm beendet")
+                exit()  
 
         # definition for the learning level “beginner”
     def beginner_unit(): 
@@ -211,7 +220,7 @@ litre_price = 1,80
     def second_learning_level():
         global score, counter # changes the value of the global variable
         score = 0
-        counter = 0
+        counter = 6
         
         #first question
         print("""\n\n######## input()-Befehl ########
@@ -287,7 +296,7 @@ Kilometer zu fahren: 200''')
     def start_learning_2():
         global score, counter # changes the value of the global variable
         score = 0
-        counter = 0
+        counter = 6
         third_learning_level()
 
     def third_learning_level():
@@ -355,7 +364,7 @@ Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
         print("3) Der Code wird trotzdem ausgeführt, aber mit Verzögerung")
         print("4) Der Code wird automatisch korrigiert")
         check_answer("2")  # Die richtige Antwort ist "2"
-
+        
 
 
     # definition for the advanced learning level
@@ -375,7 +384,7 @@ Ohne die korrekte Einrückung gibt es einen Syntaxfehler.""")
     def start_learning_3():
         global score, counter # changes the value of the global variable
         score = 0
-        counter = 0
+        counter = 6
         fourth_learning_level()
 
     def fourth_learning_level():
@@ -442,7 +451,7 @@ gibt eine Funktion automatisch `None` zurück.""")
         print("3) Die Zahl 0")
         print("4) `None`")
         check_answer("4")  
-
+        
 
 
                 ### Output ### 
