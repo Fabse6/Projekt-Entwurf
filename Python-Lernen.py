@@ -430,12 +430,16 @@ In Python werden Parameter in den Klammern nach dem Funktionsnamen angegeben.
 
 ######## Deine Aufgabe ########""")
 
-        print("\nErstelle eine Funktion, die überprüft ob eine Zahl gerade oder ungerade ist.")
-        print("Die Zahl wird mit Hilfe der variablen 'number' gespeichert")
-        print("Name der Funktion: 'check_even_or_odd()'")
-        check_code("""def check_even_or_odd(number):""")  
+        print("\nErstelle eine Funktion, die eine Person mit ihrem Namen begrüßt.")
+        print("Der Code ist Vordefiniert mit:")
+        print("def greet(name):")
+        print("    'Print a greeting message.'")
+        print("\nExample calls")
+        print('greet("Emma")    # Outout: Hello, Emma!')
+        print("***Füge das Element der Funktion ein!***")
+        check_code("def greet(name):")  
         
-
+        
         # third question
         print("""\n######## Funktionsaufruf ########
 
