@@ -45,7 +45,7 @@ def main():
 
         ### Input ### 
 
-    counter = 0
+    
     
     def restart_program():
         main()
