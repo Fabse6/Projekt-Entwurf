@@ -24,6 +24,14 @@ def main():
         ************************************
         """)
 
+
+###############################################################################################################################
+        
+        ### Input ### 
+
+###############################################################################################################################
+
+
     # Input of User-Informations
     while True: # repeats the query for the user input until a correct input is made
         learning_level = input("Gib die Nummer deiner Lernstufe ein (1-3): ") # query of the user for the respective learning level
@@ -45,7 +53,7 @@ def main():
 
 ###############################################################################################################################
         
-        ### Input ### 
+        ### Processing of user input ### 
 
 ###############################################################################################################################    
     
@@ -439,7 +447,7 @@ In Python werden Parameter in den Klammern nach dem Funktionsnamen angegeben.
         print("***Füge das Element der Funktion ein!***")
         check_code("def greet(name):")  
         
-        
+
         # third question
         print("""\n######## Funktionsaufruf ########
 
@@ -471,9 +479,15 @@ gibt eine Funktion automatisch 'None' zurück.""")
         
 
 
-                ### Output ### 
+###############################################################################################################################
+        
+        ### Output ### 
 
-        # prints the values ​​of the beginner_unit definition when the number "1" is selected
+###############################################################################################################################   
+
+
+
+    # prints the values ​​of the beginner_unit definition when the number "1" is selected
     if learning_level == "1":
         beginner_unit()
     # prints the values ​​of the intermediate_unit definition when the number "2" is selected
