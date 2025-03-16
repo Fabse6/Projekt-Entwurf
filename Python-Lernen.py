@@ -6,6 +6,8 @@
 
 'Programm to learn skills in Python'
 
+import tkinter as tk
+
 def main():
     
     # Introduction for the user
@@ -49,6 +51,26 @@ def main():
         # if no correct input was made, output this text
         else:
             print("\nUngültige Eingabe. Bitte starte das Programm neu und wähle eine Zahl zwischen 1 und 3.")
+            
+
+    def show_user_console(text_to_show):
+        # crates new window
+        root = tk.Tk()
+        root.title("Konsole:")
+
+        label = tk.Label(root, text=text_to_show, font=("Arial", 14))
+        label.pack(padx=20, pady=20)
+
+        def fenster_schliessen():
+            root.destroy()
+
+        # button to close window
+        button = tk.Button(root, text="Schließen", command=fenster_schliessen)
+        button.pack(pady=10)
+
+        root.mainloop()
+
+
 
 
 ###############################################################################################################################
@@ -223,6 +245,7 @@ Indem man eine schon zugewiesene Variable zwischen die Klammern schreibt, wird d
         print("Wenn Du zwischen den Klammern einen Text zwischen Anführungszeichen schreibst, wird dieser Text ausgegeben")
         print("\nFrage 2: Schreibe jetzt selbst einen Code, um 'Hello World!' auszugeben.")
         check_code('print("Hello World!")')
+        show_user_console("Hello World!")
 
         # third element: answering a question 
         print("""\n######## Mathematische Rechnungen ########
@@ -241,6 +264,7 @@ litre_price = 1,80
         # fourth element: answering a question
         print("Frage 4: Gib nun den Wert der neuen Variable aus!")
         check_code('print(litre)')
+        show_user_console("40")
 
 
     ### second_learning_level ###
