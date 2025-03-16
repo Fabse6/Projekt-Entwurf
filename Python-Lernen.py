@@ -84,7 +84,7 @@ def main():
                 # Calculation of score points depending on the number of attempts required
                 if response_tries == 3:
                  score += 4
-                if response_tries >= 2 and response_tries <= 4:
+                if response_tries == 2:
                     score += 2
                 if response_tries < 2:
                     score += 1
