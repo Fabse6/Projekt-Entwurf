@@ -17,7 +17,7 @@ def main():
         Mit PyLearn kannst du Python Schritt für Schritt erlernen – von den Grundlagen bis zu fortgeschrittenen Themen!
 
         Wähle deine Lernstufe:
-        [1] Anfänger – Grundlagen wie Variablen, Berechnungen und Eingaben
+        [1] Anfänger – Grundlagen wie Variablen, Ausgaben und Eingaben
         [2] Mittelstufe – Tiefgehender Inhalt mit If_Statements
         [3] Fortgeschritten – Komplexe Thematiken mit Funktionen bewerkstelligen 
 
@@ -182,9 +182,9 @@ def main():
         # Description
         print("""
 Lerneinheit für Anfänger:
-- Was sind Variablen und wie verwendest du sie?
-- Wie erstellst du Schleifen in Python?
-- Funktionen definieren und anwenden
+    - Was sind Variablen und wie verwendest du sie?
+    - Wie gibst du Texte oder Variablen in der Konsole aus?
+    - Wie kannst du Nutzereingaben verarbeiten
 Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
         input() # enter any value to start the learning unit/question catalog
