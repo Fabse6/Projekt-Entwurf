@@ -69,10 +69,10 @@ def main():
     # Checks if user's input for the questions ist correct
     def check_answer(response):
         user_response = input("Deine Lösung: ")  # Entering the solution
-        response_tries = 5                       # Number of attempts
+        response_tries = 3                       # Number of attempts
         global score, counter                    # Changes the value of the global variable
 
-        for i in range(5, 0, -1):                                           
+        for i in range(3, 0, -1):                                           
             if user_response.strip() != response and response_tries > 1:       # Entering the wrong solution but response tries is >= 1
                 print("\nFalsche Lösung!")
                 print(f"Du hast noch {i - 1} Versuche!")
@@ -82,7 +82,7 @@ def main():
                 print("Super! Das ist richtig!")
                 counter += 1                                                   # Increase the variable counter by 1
                 # Calculation of score points depending on the number of attempts required
-                if response_tries == 5:
+                if response_tries == 3:
                  score += 4
                 if response_tries >= 2 and response_tries <= 4:
                     score += 2
