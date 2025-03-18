@@ -72,13 +72,13 @@ def main():
         response_tries = 3                       # Number of attempts
         global score, counter                    # Changes the value of the global variable
 
-        for i in range(3, 0, -1):                                           
-            if user_response.strip() != response and response_tries > 1:       # Entering the wrong solution but response tries is >= 1
+        while response_tries >= 0:
+            if (user_response.strip() != response) and (response_tries > 1) and (user_response in {"1", "2", "3", "4"}):       # Entering the wrong solution but response tries is >= 1
                 print("\nFalsche Lösung!")
-                print(f"Du hast noch {i - 1} Versuche!")
+                print(f"Du hast noch {response_tries - 1} Versuche!")
                 user_response = input("\nDeine Lösung: ")
                 response_tries -= 1                                        
-            elif response_tries >= 1 and user_response.strip() == response:    # Correct entry of the solution
+            elif (response_tries >= 1) and (user_response.strip() == response) and (user_response in {"1", "2", "3", "4"}):    # Correct entry of the solution
                 print("Super! Das ist richtig!")
                 counter += 1                                                   # Increase the variable counter by 1
                 # Calculation of score points depending on the number of attempts required
@@ -91,7 +91,7 @@ def main():
                 response_tries -= 6
                 Enter_to_go_on()
                 break #ends the loop so that the current score is still displayed (unlike return)
-            elif response_tries == 1 and user_response.strip() != response:     # If the wrong answer was entered and the variable responstries = 1
+            elif (response_tries == 1) and (user_response.strip() != response) and (user_response in {"1", "2", "3", "4"}):     # If the wrong answer was entered and the variable responstries = 1
                 response_tries -= 6
                 counter += 1
                 print("\n\nDie richtige Antwort wäre: " + str(response))
@@ -99,6 +99,9 @@ def main():
                 print("Drücke 'Enter', um das Level nochmal zu versuchen")
                 input()
                 restart_program()
+            else:
+                print("Falsche Eingabe. Nur Zahlen von 1 bis 4 möglich!")
+                user_response = input("\nDeine Lösung: ")
                 
         check_next_level()
         
