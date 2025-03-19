@@ -29,7 +29,7 @@ Hier sind die Hauptfunktionen des Programms:
     - Fragen beantworten: Bei vielen Fragen werden Sie gebeten, die richtige Antwort aus mehreren Optionen auszuwählen.
     - Code eingeben: Sie werden aufgefordert, selbst Python-Code zu schreiben, um Aufgaben zu lösen.
     - Punktesystem: Für jede richtige Antwort erhalten Sie Punkte, wobei weniger Versuche zu einer höheren Punktzahl führen.
-    - Levelaufstieg: Wenn Sie alle Aufgaben eines Levels erfolgreich abgeschlossen haben, können Sie zum nächsten Lernlevel aufsteigen.
+    - Levelaufstieg: Wenn Sie alle Aufgaben eines Levels erfolgreich abgeschlossen haben, können Sie in einer weiteren Lerneinheit weiter lernen.
 
 
 Lernstufen im Detail:
@@ -48,8 +48,8 @@ Lernstufen im Detail:
         Auf diesem Niveau werden Sie mit If-Statements und deren Verwendung vertraut gemacht. Sie werden lernen, wie Sie Bedingungen überprüfen und darauf basierend unterschiedliche Codeabschnitte ausführen. Weitere Themen umfassen:
 
             - Bedingte Anweisungen: if, elif, else verwenden, um logische Entscheidungen zu treffen.
-            - Benutzereingaben: Verwenden von Eingaben, die vom Benutzer über die Konsole eingegeben werden.
-            - Ausgaben formatieren: Wie man Variablen und Strings kombiniert und ausgibt.
+            - Bedingungslogik: Überprüfung von Eingaben mit If-Statements in der Konsole.
+            - Code-Strukturierung: Die richtige Einrückung bei If-Statements für eine saubere und lesbare Ausgabe.
 
         3. Fortgeschritten (Level 3)
 
@@ -94,7 +94,7 @@ Hinweise zur Verwendung:
 Zusätzliche Informationen:
 
     - Fehlerbehebung: Achten Sie darauf, dass Sie keine Tippfehler bei der Eingabe von Code machen. Das Programm prüft Ihre Eingabe auf exakte Übereinstimmung.
-    - Beenden des Programms: Sie können das Programm beenden, indem Sie eine angegebene Eingabe machen.
+    - Beenden des Programms: Sie können das Programm beenden, indem Sie am Ende einer Lerneinheit "Enter" drücken.
 
 
 Link zum Repository:
