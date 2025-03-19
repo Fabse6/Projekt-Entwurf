@@ -316,7 +316,7 @@ Kilometer zu fahren: 200''')
         print("""
         Lerninhalte für das mittlere Schwierigkeitsniveau:      
         - If-Statements – Bedingungen für flexible Programme.
-        - Mit `if`, `elif` und `else` kannst du unterschiedliche Codeblöcke je nach Bedingung ausführen.
+        - Mit 'if', 'elif' und 'else' kannst du unterschiedliche Codeblöcke je nach Bedingung ausführen.
         Drücke eine beliebige Taste, um mit der Lerneinheit zu beginnen...
         """)
 
@@ -333,7 +333,7 @@ Kilometer zu fahren: 200''')
         # first element: answering a question
         print("""######## If-Statements ########
               
-Ein if-Statement ermöglicht es, Entscheidungen im Code zu treffen. Es überprüft eine Bedingung und 
+Ein If-Statement ermöglicht es, Entscheidungen im Code zu treffen. Es überprüft eine Bedingung und 
 führt den zugehörigen Codeblock nur aus, wenn diese erfüllt ist.
 Eigenschaften von If-Statements in Python:
 
